@@ -155,7 +155,7 @@
         <a href="index.html" style="text-decoration: none;">
             <div align="center">
                 <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
-                    <small><font color="#6495ed">in moj e-zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+                    <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
             </div>
         </a>
@@ -186,13 +186,11 @@
                         </li>
                         <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi</span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-book"></i><span> Moje telo</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -202,8 +200,6 @@
                                 <li><a href="anatomija_telesa_moski.html">Moški</a></li>
                                 <li><a href="#">Ženska</a></li>
                             </ul>
-                        </li>
-                        <li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span> Koledar</span></a>
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
@@ -239,7 +235,7 @@
             <div class=" row">
 
                 <div class="col-md-3 col-sm-3 col-xs-6 col-md-offset-1">
-                    <a data-toggle="tooltip" title="Dodaj zapis vitalnih znakov." class="well top-block" href="#">
+                    <a data-toggle="tooltip" title="Dodaj zapis vitalnih znakov." class="well top-block" href="vitalni_znaki.html">
                         <i class="glyphicon glyphicon-list-alt blue"></i>
 
                         <div>Dodaj zapis vitalnih znakov</div>
@@ -247,7 +243,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip" title="Dodaj zdravilo." class="well top-block" href="#">
+                    <a data-toggle="tooltip" title="Dodaj zdravilo." class="well top-block" href="zdravila_reakcije.html">
                         <i class="glyphicon glyphicon-asterisk blue"></i>
 
                         <div>Dodaj zdravilo</div>
@@ -255,7 +251,7 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
-                    <a data-toggle="tooltip" title="Dodaj izvid." class="well top-block" href="#">
+                    <a data-toggle="tooltip" title="Dodaj izvid." class="well top-block" href="izvidi.html">
                         <i class="glyphicon glyphicon-folder-open blue"></i>
 
                         <div>Dodaj izvid</div>
@@ -296,7 +292,7 @@
                             </div>
                         </div>
                         <div class="box-content row">
-                            <div class="col-lg-4 col-md-4 col-sm-4" style="padding-top: 10px">
+                            <div class="col-lg-4 col-md-4 col-sm-4"  style="padding-top: 10px">
                                 <div class="img-thumbnail">
                                     <img src="images/old_man_by_lash_upon_lash-d5j71hq.jpg">
                                 </div>
@@ -405,24 +401,7 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <div class="calendar_time">
-                                <div id="time" style="font-weight: bold; "></div>
-                                <div id="calendar_my"></div>
 
-                                <div class="row">
-
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div id="date" style="font-size: small; padding-left: 0">Izberi Datum</div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <a href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj');" class="dodaj-button">Dodaj</a>
-                                    </div>
-
-
-                                </div>
-                                <div class="dogodki" id="dogodki"></div>
-                            </div>
 
                         </div>
                     </div>
@@ -464,6 +443,8 @@
 
 </div><!--/.fluid-container-->
 
+
+
 <!-- external javascript -->
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -498,8 +479,7 @@
 <script src="js/charisma.js"></script>
 <script src="js/index.js"></script>
 <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
-
-
+<script src="js/vitalni-znaki.js"></script>
 
 </body>
 </html>

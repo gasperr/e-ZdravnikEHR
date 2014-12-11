@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Vollkorn");
 
 h4{
-    font-size: 280%;
+    font-size: 300%;
     font-family: 'Vollkorn', serif;
 }
 div.calendar{
@@ -50,13 +50,7 @@ a.dodaj-button{
     text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
 }
 
-#center-image{
-    padding-top: 20px;
-    align-content: center;
-    display: table;
-    margin: 0px auto;
 
-}
 a.rotate-button{
     background: url("../images/rotate-img.png") no-repeat center;
     height: 51px;
@@ -81,6 +75,13 @@ div.zd-ekipa-img{
     margin-right: 20px;
 
 }
+#center-image{
+    padding-top: 20px;
+    align-content: center;
+    display: table;
+    margin: 0px auto;
+
+}
 .center-image > img{
     max-width: 100%;
     max-height: 100%;
@@ -93,4 +94,33 @@ div.zd-ekipa-img{
     align-content: center;
     display: table;
     margin: 0px auto;
+}
+.mapster-center {
+    margin: 0 auto;
+
+}
+
+.folder-image{
+    background: url("../images/folder-izvidi.png") no-repeat center;
+    height: 150px;
+    width: 150px;
+
+    display: block;
+
+    margin:auto;
+    background-size: 100% 100%;
+
+    font-size: medium;
+    text-align: center;
+    font-weight: bolder;
+    transition: background-size 0.2s;
+
+    text-decoration: none;
+
+
+}
+.folder-image:hover{
+    background-size: 110% 110%;
+    font-size: large;
+    text-decoration: none;
 }

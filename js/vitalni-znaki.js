@@ -23,6 +23,4 @@ function dodajVitalniZnak(){
     $("#timel").prepend(html);
 
 
-}/**
- * Created by gasper on 12/11/14.
- */
+}

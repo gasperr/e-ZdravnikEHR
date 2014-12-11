@@ -131,13 +131,13 @@ topbar ends -->
 <div class="navbar navbar-default" role="navigation">
 
     <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
 
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs" id="up-ime-tag"></span>
@@ -158,7 +158,7 @@ topbar ends -->
     <a href="index.html" style="text-decoration: none;">
         <div align="center">
             <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
-                <small><font color="#6495ed">in moj e-zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+                <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
         </div>
     </a>
@@ -189,11 +189,11 @@ topbar ends -->
                         </li>
                         <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi</span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -203,8 +203,6 @@ topbar ends -->
                                 <li><a href="anatomija_telesa_moski.html">Moški</a></li>
                                 <li><a href="#">Ženska</a></li>
                             </ul>
-                        </li>
-                        <li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span> Koledar</span></a>
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
@@ -266,21 +264,21 @@ topbar ends -->
                             </div>
                         </div>
                         <div class="box-content box col-md-12 col-lg-12 col-sm-12">
-                            
-                                <div class="center-image">
-                                    <img src="images/xray.png" usemap="#xray" id="xray_body">
-                                  
-                                    <map name="xray">
-                                        <area title="Slike glave" shape="rect" coords="0,0,676,97" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-glava')">
-                                        <area title="Slike telesa" shape="rect" coords="0,97,676, 386" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-torso')">
-                                        <area title="Slike spodnjega dela telesa" shape="rect" coords="0,386,676, 651" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-noge')">
-                                    </map>
-                                </div>  
+
+                            <div class="center-image">
+                                <img src="images/xray.png" usemap="#xray" id="xray_body">
+
+                                <map name="xray">
+                                    <area title="Slike glave" shape="rect" coords="0,0,676,97" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-glava')">
+                                    <area title="Slike telesa" shape="rect" coords="0,97,676, 386" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-torso')">
+                                    <area title="Slike spodnjega dela telesa" shape="rect" coords="0,386,676, 651" href="javascript:void(0)" onclick="toggle_visibility('visibility-dodaj-noge')">
+                                </map>
+                            </div>
 
 
-    
-                            
-    
+
+
+
                         </div>
                     </div>
                 </div>
@@ -527,7 +525,7 @@ topbar ends -->
 <script src="http://www.outsharked.com/scripts/jquery.imagemapster.js"></script>
 <script src="js/index.js"></script>
 <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
-
+<script src="js/mapster.js"></script>
 
 
 

@@ -133,12 +133,12 @@ topbar ends -->
 <div class="navbar navbar-default" role="navigation">
 
     <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
 
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -160,7 +160,7 @@ topbar ends -->
     <a href="index.html" style="text-decoration: none;">
         <div align="center">
             <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
-                <small><font color="#6495ed">in moj e-zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+                <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
         </div>
     </a>
@@ -191,11 +191,11 @@ topbar ends -->
                         </li>
                         <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi</span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -205,8 +205,6 @@ topbar ends -->
                                 <li><a href="anatomija_telesa_moski.html">Moški</a></li>
                                 <li><a href="#">Ženska</a></li>
                             </ul>
-                        </li>
-                        <li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span> Koledar</span></a>
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
@@ -246,7 +244,7 @@ topbar ends -->
                     <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">10.12.2014 (15:24)</h4>
+                            <h4 class="timeline-title">10.12.2014 (15:15)</h4>
                             <p><small class="text-muted"> dr.med. Lonec Olga Pogačar</small></p>
                         </div>
                         <div class="timeline-body">
@@ -268,7 +266,7 @@ topbar ends -->
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-eye-open"> <i id="date">12.12.2014</i></i></div>
+                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-eye-open"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4 class="timeline-title">10.11.2014 (15:24)</h4>
@@ -339,50 +337,50 @@ topbar ends -->
     <div class="panel-heading" id="heading-dodaj-v-koledar">Dodaj zapis vitalnih znakov</div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-lg-5 col-md-5">
+            <div class="col-lg-5 col-md-5 col-sm-5">
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="visina-input" class="col-sm-5 control-label">Višina:</label>
-                        <div class="col-sm-5">
+                        <label for="visina-input" class="col-lg-5 col-md-5 col-sm-5 control-label">Višina:</label>
+                        <div class="col-sm-6">
                             <input class="form-control" id="visina-input" placeholder="Višina [cm]">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="teza-input" class="col-sm-5 control-label">Teža:</label>
-                        <div class="col-sm-5">
+                        <label for="teza-input" class="col-lg-5 col-md-5 col-sm-5 control-label">Teža:</label>
+                        <div class="col-sm-6">
                             <input class="form-control" id="teza-input" placeholder="Teža [kg]">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="itm-input" class="col-sm-5 control-label">Indeks tel. mase:</label>
-                        <div class="col-sm-5">
+                        <label for="itm-input" class="col-lg-5 col-md-5 col-sm-5 control-label">Indeks tel. mase:</label>
+                        <div class="col-sm-6">
                             <input class="form-control" id="itm-input" placeholder="ITM">
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-lg-7 col-md-7">
+            <div class="col-lg-7 col-md-7 col-sm-7">
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="temp-input" class="col-sm-7 control-label">Temperatura:</label>
+                        <label for="temp-input" class="col-lg-7 col-md-7 col-sm-7 control-label">Temperatura:</label>
                         <div class="col-sm-5">
                             <input class="form-control" id="temp-input" placeholder="Temp [°C]">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="sis-input" class="col-sm-7 control-label">Sistolični krvni tlak:</label>
+                        <label for="sis-input" class="col-lg-7 col-md-7 col-sm-7 control-label">Sistolični krvni tlak:</label>
                         <div class="col-sm-5">
                             <input class="form-control" id="sis-input" placeholder="mm Hg">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="dis-input" class="col-sm-7 control-label">Diastolični krvni tlak:</label>
+                        <label for="dis-input" class="col-lg-7 col-md-7 col-sm-7 control-label">Diastolični krvni tlak:</label>
                         <div class="col-sm-5">
                             <input class="form-control" id="dis-input" placeholder="mm Hg">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nas-input" class="col-sm-7 control-label">Nasičenost krvi s kisikom:</label>
+                        <label for="nas-input" class="col-lg-7 col-md-7 col-sm-7 control-label">Nasičenost krvi s kisikom:</label>
                         <div class="col-sm-5">
                             <input class="form-control" id="nas-input" placeholder="%">
                         </div>
@@ -391,7 +389,7 @@ topbar ends -->
             </div>
         </div>
         <div class="row" style="margin-top: 20px">
-            <div class="col-lg-3 col-md-3"></div>
+            <div class="col-lg-2 col-md-2"></div>
             <form class="form-inline" role="form">
                 <div class="form-group">
                     <div class="input-group">
