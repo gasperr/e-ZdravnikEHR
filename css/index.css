@@ -82,3 +82,7 @@ div.zd-ekipa-img{
     margin-right: 20px;
 
 }
+.center-image > img{
+    max-width: 100%;
+    max-height: 100%;
+}
