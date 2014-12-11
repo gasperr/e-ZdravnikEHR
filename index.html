@@ -407,8 +407,15 @@
                             </div>
                         </div>
                         <div class="box-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div id="logo-zzs"> <img src="images/zzs_logo.png"> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4"></div>
 
-                            <form name="form1" method="post" action="http://www.zdravniskazbornica.si/iskalnik/iskalnik.aspx?priimek=&amp;licencaId=" id="form1">
+                            </div>
+                            <form class="form-horizontal" role="form" name="form1" method="post" action="http://www.zdravniskazbornica.si/iskalnik/iskalnik.aspx?priimek=&amp;licencaId=" id="form1">
                                 <div>
                                     <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
                                     <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
@@ -455,11 +462,137 @@
                                     //]]>
                                 </script>
 
+
+
+
+                                    <div class="form-group" id="usernameGroup">
+                                        <label class="col-sm-3 control-label">Priimek</label>
+                                        <div class="col-sm-9">
+                                            <input id="TxtPriimek" name="TxtPriimek" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="passGroup">
+                                        <label for="DdlSpecialnost" id="pass" class="col-sm-3 control-label">Licenca</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control input-sm" id="DdlSpecialnost" name="DdlSpecialnost">
+                                                <option selected="selected" value="-1">-- vse --</option>
+                                                <option value="1">Abdominalna kirurgija</option>
+                                                <option value="2">Anesteziologija, reanimatologija in perioperativna intenzivna medicina</option>
+                                                <option value="3">Čeljustna in zobna ortopedija</option>
+                                                <option value="4">Dentalna medicina</option>
+                                                <option value="5">Dermatovenerologija</option>
+                                                <option value="7">Fizikalna in rehabilitacijska medicina</option>
+                                                <option value="8">Gastroenterologija</option>
+                                                <option value="9">Ginekologija in porodništvo</option>
+                                                <option value="10">Hematologija</option>
+                                                <option value="11">Infektologija</option>
+                                                <option value="12">Intenzivna medicina</option>
+                                                <option value="13">Interna medicina</option>
+                                                <option value="14">Internistična onkologija</option>
+                                                <option value="15">Javno zdravje</option>
+                                                <option value="52">Kardiologija in vaskularna medicina</option>
+                                                <option value="16">Kardiovaskularna kirurgija</option>
+                                                <option value="53">Klinična fiziologija</option>
+                                                <option value="17">Klinična genetika</option>
+                                                <option value="18">Klinična mikrobiologija</option>
+                                                <option value="55">Letalska medicina</option>
+                                                <option value="19">Maksilofacialna kirurgija</option>
+                                                <option value="20">Medicina dela, prometa in športa</option>
+                                                <option value="21">Nefrologija</option>
+                                                <option value="22">Nevrokirurgija</option>
+                                                <option value="23">Nevrologija</option>
+                                                <option value="24">Nevropsihiatrija</option>
+                                                <option value="25">Nuklearna medicina</option>
+                                                <option value="26">Oftalmologija</option>
+                                                <option value="27">Onkologija z radioterapijo</option>
+                                                <option value="28">Oralna kirurgija</option>
+                                                <option value="29">Ortopedska kirurgija</option>
+                                                <option value="30">Otorinolaringologija</option>
+                                                <option value="31">Otroška in mladostniška psihiatrija</option>
+                                                <option value="32">Otroška nevrologija</option>
+                                                <option value="33">Otroško in preventivno zobozdravstvo</option>
+                                                <option value="34">Parodontologija</option>
+                                                <option value="35">Patologija</option>
+                                                <option value="36">Pediatrija/Šolska medicina</option>
+                                                <option value="37">Plastična, rekonstrukcijska in estetska kirurgija</option>
+                                                <option value="38">Pnevmologija</option>
+                                                <option value="39">Psihiatrija</option>
+                                                <option value="40">Radiologija</option>
+                                                <option value="41">Revmatologija</option>
+                                                <option value="42">Sodna medicina</option>
+                                                <option value="43">Splošna kirurgija</option>
+                                                <option value="44">Splošna medicina </option>
+                                                <option value="6">Splošna medicina/Družinska medicina (specialist)</option>
+                                                <option value="45">Stomatološka protetika</option>
+                                                <option value="46">Torakalna kirurgija</option>
+                                                <option value="47">Transfuzijska medicina</option>
+                                                <option value="48">Travmatologija</option>
+                                                <option value="49">Urgentna medicina</option>
+                                                <option value="50">Urologija</option>
+                                                <option value="51">Zobne bolezni in endodontija</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="passGroup">
+                                        <label for="DdlRegije" id="pass" class="col-sm-3 control-label">Območna enota</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control input-sm" id="DdlRegije" name="DdlRegije">
+                                                <option selected="selected" value="-1">-- vse --</option>
+                                                <option value="1">CELJE</option>
+                                                <option value="2">KOPER</option>
+                                                <option value="3">KRŠKO</option>
+                                                <option value="4">KRANJ</option>
+                                                <option value="5">LJUBLJANA</option>
+                                                <option value="6">MARIBOR</option>
+                                                <option value="7">MURSKA SOBOTA</option>
+                                                <option value="8">NOVA GORICA</option>
+                                                <option value="9">NOVO MESTO</option>
+                                                <option value="10">RAVNE NA KOROŠKEM</option>
+                                                <option value="11">Ni podatka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="passGroup">
+                                        <label for="TxtUstanova" id="pass" class="col-sm-3 control-label">Naziv ustanove</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="TxtUstanova" id="TxtUstanova">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="passGroup">
+                                        <label for="DdlVrstaUstanove" id="pass" class="col-sm-3 control-label">Vrsta ustanove</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control input-sm" id="DdlVrstaUstanove" name="DdlVrstaUstanove">
+                                                <option selected="selected" value="-1">-- vse --</option>
+                                                <option value="1">Bolnišnica</option>
+                                                <option value="3">Posebni socialni zavod</option>
+                                                <option value="5">Zdravilišče</option>
+                                                <option value="6">Zdravstveni dom</option>
+                                                <option value="207">Podjetje/Zasebnik brez koncesije</option>
+                                                <option value="208">Podjetje/Zasebnik s koncesijo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-5 col-sm-7">
+                                            <input type="submit" name="BtnIsci" value="Iskanje" id="BtnIsci" class="btn btn-primary" style="width: 30%" />
+                                            <br>
+                                            <small style="color: #808080; font-size: xx-small">Pozor: povezava je preusmeritev</small>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+
+
+
+                                <!--
+
                                 <div>
 
                                     <table class="style1">
                                         <tr>
-                                            <td width="120">Priimek:
+                                            <td width="120"><b>Priimek:</b>
                                             </td>
                                             <td><input name="TxtPriimek" type="text" id="TxtPriimek" style="width:260px;" /></td>
                                         </tr>
@@ -529,7 +662,7 @@
                                             <td>&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td>Območna enota:</td>
+                                            <td><b>Območna enota:</b></td>
                                             <td><select name="DdlRegije" id="DdlRegije" style="width:266px;">
                                                 <option selected="selected" value="-1">-- vse --</option>
                                                 <option value="1">CELJE</option>
@@ -547,11 +680,11 @@
                                             </select></td>
                                         </tr>
                                         <tr>
-                                            <td>Naziv ustanove:</td>
+                                            <td><b>Naziv ustanove:</b></td>
                                             <td><input name="TxtUstanova" type="text" id="TxtUstanova" style="width:260px;" /></td>
                                         </tr>
                                         <tr>
-                                            <td>Vrsta ustanove:</td>
+                                            <td><b>Vrsta ustanove:</b></td>
                                             <td><select name="DdlVrstaUstanove" id="DdlVrstaUstanove" style="width:266px;">
                                                 <option selected="selected" value="-1">-- vse --</option>
                                                 <option value="1">Bolnišnica</option>
@@ -565,7 +698,7 @@
                                         </tr>
                                         <tr>
                                             <td>&nbsp;</td>
-                                            <td><input type="submit" name="BtnIsci" value="Išči" id="BtnIsci" class="btn btn-default" />
+                                            <td><input type="submit" name="BtnIsci" value="Išči" id="BtnIsci" class="btn btn-primary" />
                                             </td>
                                         </tr>
                                     </table>
@@ -585,7 +718,7 @@
                                     Sys.Application.initialize();
                                     //]]>
                                 </script>
-                            </form>
+                            </form>-->
 
                         </div>
                     </div>

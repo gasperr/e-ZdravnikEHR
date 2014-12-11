@@ -138,3 +138,9 @@ div.zd-ekipa-img{
     font-size: large;
     text-decoration: none;
 }
+
+#logo-zzs > img{
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 15px;
+}
