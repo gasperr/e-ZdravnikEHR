@@ -25,10 +25,10 @@ function toggle_visibility(id) {
 }, 3000);*/
 
 function rotatePictureBody(){
-    jQuery('.center-image').load("back-body.html");
+    jQuery('#center-image').load("back-body.html");
 }
 function rotatePictureBodyBack(){
-    jQuery('.center-image').load("front-body.html");
+    jQuery('#center-image').load("front-body.html");
 }
 
 $(document).ready(function() {

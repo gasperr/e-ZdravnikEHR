@@ -50,13 +50,11 @@ a.dodaj-button{
     text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
 }
 
-div.center-image{
+#center-image{
     padding-top: 20px;
     align-content: center;
     display: table;
     margin: 0px auto;
-    width: inherit;
-    height: inherit;
 
 }
 a.rotate-button{
@@ -87,7 +85,7 @@ div.zd-ekipa-img{
     max-width: 100%;
     max-height: 100%;
 }
-#front{
+#front, #back{
     max-width: 100%;
     max-height: 100%;
 }
