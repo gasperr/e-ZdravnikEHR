@@ -55,7 +55,8 @@ div.center-image{
     align-content: center;
     display: table;
     margin: 0px auto;
-    width: auto;
+    width: inherit;
+    height: inherit;
 
 }
 a.rotate-button{
