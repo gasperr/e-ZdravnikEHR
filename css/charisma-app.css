@@ -578,7 +578,7 @@ ul.github-buttons li {
     }
 
     .sidebar-nav {
-        position: relative;
+        position: absolute;
         z-index: 100;
         margin: 0 !important;
         padding: 0;
