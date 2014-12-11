@@ -38,6 +38,8 @@
     <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
     <link href='css/uploadify.css' rel='stylesheet'>
     <link href='css/animate.min.css' rel='stylesheet'>
+    <link href='css/index.css' rel="stylesheet">
+    <link href='css/popups.css' rel="stylesheet">
 
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
@@ -55,13 +57,17 @@
 <div class="row">
 
     <div align="center">
-        <img src="images/Best-EMR.jpg" class="img-responsive" alt="Responsive image">
+        <img src="images/Best-EMR.jpg" class="img-responsive" alt="Responsive image" id="login-head-img">
     </div>
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-8"><b>Vpis v zdravstveno kartoteko</b></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8"><b>Vpis v zdravstveno kartoteko</b><br>
+                        <span>
+                            <a class="btn" href="http://www.ted.com/talks/dave_debronkart_meet_e_patient_dave" id="quote"><i><b>"The most underutilized resource in healthcare is the patient"</b><br> ~ Dave deBronkart</i></a>
+                        </span>
+                    </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <font size="1" color="#f0e68c">Demo osebe</font>
                         <select class="form-control input-sm" id="dodajDemoLogin">
@@ -102,18 +108,34 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-10">
-                            <button type="submit" class="btn btn-default" onclick="vpisime(); return false">Vpiši me</button>
+                            <button type="submit" class="btn btn-success" onclick="vpisime(); return false">Vpiši me</button>
 
                         </div>
                     </div>
                 </form>
+                <br>
+                <div class="row" style="border-top: 1px grey solid">
+                    <br>
+                    <div class="col-sm-2 col-lg-2 col-md-2"></div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="btn"><b>Še nimaš EHR računa?</b></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <button type="submit" class="btn btn-primary" onclick="registriraj()">Registriraj se v EHR bazo</button>
+                    </div>
+                </div>
             </div>
+
 
         </div>
 
     </div>
 </div>
+
 </body>
+
+
+
 
 <!-- external javascript -->
 <script src="js/login.js"></script>
@@ -149,7 +171,7 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+<script src="js/index.js"></script>
 
 
-</body>
 </html>

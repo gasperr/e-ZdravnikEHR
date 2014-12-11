@@ -32,6 +32,15 @@
     display: none;
     z-index: 100;
 }
+#visibility-registracija{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: white;
+    display: none;
+    z-index: 100;
+}
 
 @media only screen and (max-width: 767px) {
     #visibility-dodaj-vpis-vitalnih{

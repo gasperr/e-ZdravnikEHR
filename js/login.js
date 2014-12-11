@@ -26,6 +26,13 @@ function vpisime(){
     return false;
 }
 
+function registriraj(){
+
+    window.location.href="registracija.html";
+
+    return false;
+}
+
 
 
 
