@@ -1,0 +1,84 @@
+@import url("http://fonts.googleapis.com/css?family=Vollkorn");
+
+h4{
+    font-size: 280%;
+    font-family: 'Vollkorn', serif;
+}
+div.calendar{
+    width: 100%;
+    height: 100%;
+}
+div.calendar table{
+    width: 100%;
+}
+
+div.dogodki{
+    padding-top: 10px;
+    font-size: small;
+    color: blue;
+}
+
+#time{
+    text-align: center;
+    font-size: medium;
+    height: 40px;
+    padding-top: 5%;
+
+    color: #ffffff;
+    font-weight: bold;
+    background: -moz-linear-gradient(top, #6699ff 0%, #214dff);
+    background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#214dff));
+
+}
+a.dodaj-button{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: #ffffff;
+    padding: 5px 5px;
+    background: -moz-linear-gradient(top, #6699ff 0%, #214dff);
+    background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#214dff));
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 2px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 2px rgba(0,0,0,1);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 2px rgba(0,0,0,1);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+div.center-image{
+    padding-top: 20px;
+    align-content: center;
+    display: table;
+    margin: 0px auto;
+    width: auto;
+
+}
+a.rotate-button{
+    background: url("../images/rotate-img.png") no-repeat center;
+    height: 51px;
+    width: 66px;
+
+    display: block;
+    background-position: right;
+
+    margin:auto;
+
+}
+.img-thumbnail > img {
+
+    max-width: 100%;
+    max-height: 100%;
+
+}
+div.zd-ekipa-img{
+    float: left;
+    height: 90px;
+    width: 80px;
+    margin-right: 20px;
+
+}

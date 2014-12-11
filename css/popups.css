@@ -1,0 +1,36 @@
+#visibility-dodaj-glava{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background: grey;
+    display: none;
+}
+#visibility-dodaj-torso{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background: grey;
+    display: none;
+}
+#visibility-dodaj-noge{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background: grey;
+    display: none;
+}
+
+#visibility-dodaj-vpis-vitalnih{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: #d3d3d3;
+    display: none;
+    height: 400px;
+    width: 700px;
+    z-index: 100;
+}
