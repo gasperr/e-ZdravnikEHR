@@ -48,27 +48,31 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+
 
 </head>
+<link rel="shortcut icon" href="images/healthcare-bubble.png">
 
 <body>
+
 <div class="navbar navbar-default" role="navigation">
 
-    <div class="navbar-inner">
-
+    <div class="navbar-inner" style="text-align: center">
         <button type="button" class="navbar-toggle pull-left animated flip">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs" id="up-ime-tag"></span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
+                <li><a href="javascript:void(0)" onclick="kreirajEHRDemoOseb()"><span class="glyphicon glyphicon-certificate"></span>  Zgeneriraj EHR</a></li>
+                <li class="divider"></li>
                 <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
             </ul>
         </div>
@@ -82,13 +86,15 @@
 <div class="page-header">
     <a href="index.html" style="text-decoration: none;">
         <div align="center">
-            <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
+            <h4><font color="blue"><span id="naslovnoIme"></span></font>
                 <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
         </div>
     </a>
     <div id="logout"></div>
 </div>
+
+
 <div class="ch-container">
     <div class="row">
 
@@ -108,15 +114,15 @@
                         <li class="nav-header hidden-md">Moja Zdravniška Kartoteka</li>
                         <li><a class="ajax-link" href="družinska_zgodovina.html"><i class="glyphicon glyphicon-list-alt"></i><span> Družinska zgodovina</span></a>
                         </li>
-                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-list-alt"></i><span> Vitalni znaki</span></a>
+                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-heart"></i><span> Vitalni znaki</span></a>
                         </li>
-                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
+                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-camera"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-tasks"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-leaf"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-asterisk"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -129,7 +135,7 @@
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
-                        <li><a href="#"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
+                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
                         <!-- <li><a class="ajax-link" href="icon.html"><i
                                      class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
                         <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -155,7 +161,6 @@
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-            <span class="label label-info">Podatki so bili nazadnje posodobljeni: <span id="zadnjic-posodobljeni">11.10.2014, 13:00</span></span>
             <div class="row">
                 <div class="box col-md-6">
                     <div class="box-inner">
@@ -170,16 +175,17 @@
                         <div class="box-content">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <p><b>Ime:</b></p>
-                                    <p><b>Priimek:</b></p>
-                                    <p><b>Naslov bivanja:</b></p>
-                                    <p><b>Kraj bivanja:</b></p>
-                                    <p><b>Pošta:</b></p>
+                                    <p><b>Ime:</b> <span id="indexIme"></span></p>
+                                    <p><b>Priimek:</b><span id="indexPriimek"></span></p>
+                                    <p><b>Naslov bivanja:</b> <span id="indexNaslovBivanja"></span></p>
+                                    <p><b>Kraj bivanja:</b> <span  id="indexKrajBivanja"></span></p>
+                                    <p><b>Pošta:</b><span id="indexPosta"></span></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <p><b>Rojstni datum:</b></p>
-                                    <p style="padding-left: 20px">Starost:</p>
-                                    <p><b>Rojstni kraj:</b></p>
+                                    <p><b>Rojstni datum:</b><span id="indexRojDan"></span></p>
+                                    <p style="padding-left: 20px">Starost: <span id="indexStarost"></span></p>
+                                    <p><b>Rojstni kraj:</b><span id="indexRojKraj"></span></p>
+                                    <p><b>EHR ID:</b> <span id="indexEhrId" style="font-size: x-small"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -190,25 +196,26 @@
                 <div class="box col-md-6">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-th"></i> Vitalni znaki</h2>
+                            <h2><i class="glyphicon glyphicon-th"></i> Vitalni znaki     <span class="label label-primary" id="zadnjicPosodobljeni">11.10.2014, 13:00</span></h2>
+
 
                             <div class="box-icon">
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="vitalni_znaki.html" class="btn btn-round btn-primary"><i
+                                        class="glyphicon glyphicon-cog"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
                             <div class="row">
                                 <div class="col-lg-5 col-md-5">
-                                    <p><b>Višina:</b></p>
-                                    <p><b>Teža:</b></p>
-                                    <p><b>Indeks telesne teže:</b></p>
+                                    <p><b>Višina:</b> <span id="indexVisina"></span></p>
+                                    <p><b>Teža:</b> <span id="indexTeza"></span></p>
+                                    <p><b>Indeks telesne teže:</b> <span id="indexItm"></span></p>
                                 </div>
                                 <div class="col-lg-7 col-md-7">
-                                    <p><b>Temperatura:</b></p>
-                                    <p><b>Sistolični krvni tlak:</b></p>
-                                    <p><b>Diastolični krvni tlak:</b></p>
-                                    <p><b>Nasičenost krvi s kisikom:</b></p>
+                                    <p><b>Temperatura:</b> <span id="indexTemp"></span></p>
+                                    <p><b>Sistolični krvni tlak:</b> <span id="indexSis"></span></p>
+                                    <p><b>Diastolični krvni tlak:</b> <span id="indexDis"></span></p>
+                                    <p><b>Nasičenost krvi s kisikom:</b> <span id="indexNas"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -223,28 +230,18 @@
                             <h2><i class="glyphicon glyphicon-th"></i> Trenutno jemajoča zdravila</h2>
 
                             <div class="box-icon">
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="zdravila_reakcije.html" class="btn btn-round btn-primary"><i
+                                        class="glyphicon glyphicon-cog"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
-                            <table class="table">
+                            <table class="table" id="trenutno-jemajoca-podatki">
                                 <tr>
                                     <th>Naziv</th>
                                     <th>Razlog</th>
                                     <th>Jemanje</th>
                                 </tr>
 
-                                <tr>
-                                    <td>Aspirin</td>
-                                    <td>Redčenje krvi</td>
-                                    <td>3/teden</td>
-                                </tr>
-                                <tr>
-                                    <td>Medrol</td>
-                                    <td>Chron</td>
-                                    <td>1/dan</td>
-                                </tr>
                             </table>
 
                         </div>
@@ -265,11 +262,11 @@
                         <div class="box-content">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-                                    <p><b>Zavarovalnica: </b>Triglav</p>
-                                    <p><b>Številka police: </b>189237-12321-111</p>
-                                    <p><b>Tip zavarovanja: </b>Nezgodno</p>
-                                    <p><b>Poteče dne: </b>12.12.2015</p>
-                                    <p><b>Številka ZZZS kartice: </b>80705000018</p>
+                                    <p><b>Zavarovalnica: </b><span id="zav"></span></p>
+                                    <p><b>Številka police: </b><span id="stPol"></span>-12321-111</p>
+                                    <p><b>Tip zavarovanja: </b><span id="tip"></span></p>
+                                    <p><b>Poteče dne: </b><span id="potece"></span></p>
+                                    <p><b>Številka ZZZS kartice: </b><span id="stZs"></span></p>
 
                                 </div>
                             </div>
@@ -289,18 +286,13 @@
                             </div>
                         </div>
                         <div class="box-content">
-                            <table class="table">
+                            <table class="table" id="nezakljSpecPreg">
                                 <tr>
                                     <th>Specialist</th>
                                     <th>Ustanova</th>
                                     <th>Nasl.pregled</th>
                                 </tr>
 
-                                <tr>
-                                    <td>Koser Kolar Nataša</td>
-                                    <td>SBC-Dermatolog</td>
-                                    <td>27.1.2014</td>
-                                </tr>
                             </table>
                         </div>
                     </div>
@@ -381,7 +373,11 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script src="js/index.js"></script>
+<script src="ehr-js/ehr.js"></script>
 
+<script type="text/javascript">
+    window.onload = nastaviPregledPodatkov();
+</script>
 
 </body>
 </html>

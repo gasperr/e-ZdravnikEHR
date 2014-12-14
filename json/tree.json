@@ -2,28 +2,28 @@
   "name": "Moje Ime",
   "born": 1994,
   "died": "",
-  "location": "Petersburg, VA",
-  "genetske": "Rak na pljučih",
+  "location": "",
+  "genetske": "N/A",
   "parents": [
     {
       "name": "James Shanks",
       "born": 1831,
-      "died": 1884,
-      "location": "Petersburg, VA",
+      "died": "",
+      "location": "",
       "genetske": "Rak na pljučih",
       "parents": [
         {
           "name": "Robert Shanks",
           "born": 1781,
-          "died": 1871,
-          "location": "Ireland/Petersburg, VA",
+          "died": "",
+          "location": "",
           "genetske": "Rak na pljučih"
         },
         {
           "name": "Elizabeth Shanks",
           "born": 1795,
-          "died": 1871,
-          "location": "Ireland/Petersburg, VA",
+          "died": "",
+          "location": "",
           "genetske": "Rak na pljučih"
         }
       ]
@@ -31,22 +31,22 @@
     {
       "name": "Ann Emily Brown",
       "born": 1826,
-      "died": 1866,
-      "location": "Brunswick/Petersburg, VA",
+      "died": "",
+      "location": "",
       "genetske": "Rak na pljučih",
       "parents": [
         {
           "name": "Henry Brown",
           "born": 1792,
-          "died": 1845,
-          "location": "Montgomery, NC",
+          "died": "",
+          "location": "",
           "genetske": "Rak na pljučih"
         },
         {
           "name": "Sarah Houchins",
           "born": 1793,
-          "died": 1882,
-          "location": "Montgomery, NC",
+          "died": "",
+          "location": "",
           "genetske": "Rak na pljučih"
         }
       ]

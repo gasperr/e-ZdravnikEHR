@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>e-Zdravstveni Pomočnik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+    <link href='css/vitalni_znaki.css' rel='stylesheet'>
+    <link href='css/index.css' rel='stylesheet'>
+    <link href='css/graficni-pregled.podatkov.css' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+
+    <!-- The fav icon -->
+
+    <style>
+
+        text {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .about {
+            fill: #777;
+            font-size: smaller;
+        }
+
+        .link {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .gen-bolezni{
+            font-size: small;
+        }
+
+    </style>
+
+
+</head>
+<link rel="shortcut icon" href="images/healthcare-bubble.png">
+
+<body>
+
+<div class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-inner" style="text-align: center">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs" id="up-ime-tag"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="javascript:void(0)" onclick="kreirajEHRDemoOseb()"><span class="glyphicon glyphicon-certificate"></span>  Zgeneriraj EHR</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div class="page-header">
+    <a href="index.html" style="text-decoration: none;">
+        <div align="center">
+            <h4><font color="blue"><span id="naslovnoIme"></span></font>
+                <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+
+        </div>
+    </a>
+    <div id="logout"></div>
+</div>
+
+
+<div class="ch-container">
+    <div class="row">
+
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                    <ul class="nav nav-pills nav-stacked main-menu">
+                        <li class="nav-header">Glavno</li>
+                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Domov</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="pregled_podatkov.html"><i class="glyphicon glyphicon-eye-open"></i><span> Pregled podatkov</span></a>
+                        </li>
+                        <li class="nav-header hidden-md">Moja Zdravniška Kartoteka</li>
+                        <li><a class="ajax-link" href="družinska_zgodovina.html"><i class="glyphicon glyphicon-list-alt"></i><span> Družinska zgodovina</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-heart"></i><span> Vitalni znaki</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="graficni_pregled_vitalnih.html" id="graficni-pregled"><i class="glyphicon glyphicon-stats"></i><span> Grafični pregled</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-camera"></i><span> Slike</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-tasks"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
+                        </li>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-leaf"></i><span> Alergije</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-asterisk"></i><span> Zdravila in reakcije</span></a>
+                        </li>
+                        <li class="nav-header hidden-md">Drugo</li>
+
+                        <li class="accordion">
+                            <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> Anatomija telesa</a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="anatomija_telesa_moski.html">Moški</a></li>
+                                <li><a href="#">Ženska</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li><a class="ajax-link" href="grid.html"><i
+                                     class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
+                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
+                        <!-- <li><a class="ajax-link" href="icon.html"><i
+                                     class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
+                        <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
+                         </li>
+                         <li><a href="login.html"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
+                         </li> -->
+                    </ul>
+                    <!-- <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label> -->
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <div class="row">
+                <div class="box col-md-12 col-lg-12 col-sm-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-picture"></i> Grafični pregled vitalnih podatkov</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content box col-md-12 col-lg-12 col-sm-12">
+                            <div class="center-image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
+
+            </div><!--/row-->
+
+        </div><!--/#content.col-md-0-->
+    </div>
+
+
+
+
+    <footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="https://ucilnica.fri.uni-lj.si/user/profile.php?id=14408" target="_blank">Gašper Andrejc</a> e-Zdravje projekt pri OIS</p>
+
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+
+<!-- data table plugin -->
+<script src='js/jquery.dataTables.min.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plugin -->
+<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+<script src="js/index.js"></script>
+<script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/graficni_pregled_vitalnih.js"></script>
+
+<script src="ehr-js/ehr.js"></script>
+
+
+
+</body>
+</html>

@@ -216,3 +216,8 @@
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
 }
+
+#graficni-pregled{
+    margin-left: 20px;
+    background: lightblue;
+}

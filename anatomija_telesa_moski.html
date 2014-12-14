@@ -51,11 +51,13 @@
     <link rel="shortcut icon" href="img/favicon.ico">
 
 </head>
+<link rel="shortcut icon" href="images/healthcare-bubble.png">
 
 <body>
+
 <div class="navbar navbar-default" role="navigation">
 
-    <div class="navbar-inner">
+    <div class="navbar-inner" style="text-align: center">
         <button type="button" class="navbar-toggle pull-left animated flip">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -69,6 +71,8 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
+                <li><a href="javascript:void(0)" onclick="kreirajEHRDemoOseb()"><span class="glyphicon glyphicon-certificate"></span>  Zgeneriraj EHR</a></li>
+                <li class="divider"></li>
                 <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
             </ul>
         </div>
@@ -83,12 +87,14 @@
     <a href="index.html" style="text-decoration: none;">
         <div align="center">
             <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
-                <small><font color="#6495ed">in moj e-zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+                <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
         </div>
     </a>
     <div id="logout"></div>
 </div>
+
+
 <div class="ch-container">
     <div class="row">
 
@@ -108,15 +114,15 @@
                         <li class="nav-header hidden-md">Moja Zdravniška Kartoteka</li>
                         <li><a class="ajax-link" href="družinska_zgodovina.html"><i class="glyphicon glyphicon-list-alt"></i><span> Družinska zgodovina</span></a>
                         </li>
-                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-list-alt"></i><span> Vitalni znaki</span></a>
+                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-heart"></i><span> Vitalni znaki</span></a>
                         </li>
-                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
+                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-camera"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-tasks"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-leaf"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-asterisk"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -129,7 +135,7 @@
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
-                        <li><a href="#"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
+                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
                         <!-- <li><a class="ajax-link" href="icon.html"><i
                                      class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
                         <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>

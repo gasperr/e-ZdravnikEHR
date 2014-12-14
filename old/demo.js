@@ -254,6 +254,7 @@ $(document).ready(function() {
 	$('#preberiObstojeciEHR').change(function() {
 		$("#preberiSporocilo").html("");
 		$("#preberiEHRid").val($(this).val());
+		alert($(this).val());
 	});
 	$('#preberiPredlogoBolnika').change(function() {
 		$("#kreirajSporocilo").html("");

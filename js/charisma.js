@@ -291,9 +291,16 @@ function docReady() {
         else                       $('i', $(this)).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         $target.slideToggle();
     });
-    $('.btn-setting').click(function (e) {
+    $('#uredi-glavne').click(function (e) {
         e.preventDefault();
         $('#myModal').modal('show');
+
+        $("#ind_naslov").attr("placeholder", $("#indexNaslovBivanja").text());
+        $("#ind_kraj").attr("placeholder", $("#indexKrajBivanja").text());
+        $("#ind_posta").attr("placeholder", $("#indexPosta").text());
+        $("#ind_rojDat").attr("placeholder", $("#indexRojDan").text()+"T08:12");
+        $("#ind_rojKraj").attr("placeholder", $("#indexRojKraj").text());
+        $("#ind_stZZZS").attr("placeholder", $("#indexStZZZS").text());
     });
 
 

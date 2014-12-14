@@ -3,6 +3,11 @@
  */
 
 function toggle_visibility(id) {
+    if(id == "visibility-dodaj-vpis-vitalnih"){
+        var date = new Date();
+        $("#datum-vnosa").val(date.toISOString());
+    }
+
     var e = document.getElementById(id);
     if(e.style.display == 'block')
         e.style.display = 'none';
@@ -36,6 +41,19 @@ $(document).ready(function() {
     $("#naslovnoIme").text(up);
     $("#up-ime-tag").text(" "+up);
     $("#up-ime-opis").text(" "+up);
+
+    $("#disabledInput\\ 1").attr("placeholder", up.split(" ")[0]);
+    $("#disabledInput\\ 2").attr("placeholder", up.split(" ")[1]);
+
+    nastaviIndexStran();
+
+
+});
+
+$("#tabela-opomnikov").on('click', '.remove-opomnik', function(){
+    var x = $(this).parent().parent().html();
+    $(this).parent().parent().html("");
+
 });
 
 

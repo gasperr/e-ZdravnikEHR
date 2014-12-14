@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <!--
         ===
@@ -41,7 +41,7 @@
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
-    <!-- zdravstvena -->
+
 
 </head>
 
@@ -53,83 +53,9 @@
     <![endif]-->
 
     <!-- The fav icon -->
-
-
-
+    <link rel="shortcut icon" href="images/healthcare-bubble.png">
 
 <body>
-    <!-- topbar starts
-    <div class="navbar navbar-default" role="navigation">
-
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
-                <span id="charisma">Charisma</span></a>
-
-
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs" id="up-ime-tag"> admin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
-                </ul>
-            </div>
-
-
-
-            <div class="btn-group pull-right theme-container animated tada">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-tint"></i><span
-                        class="hidden-sm hidden-xs"> Change Theme / Skin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" id="themes">
-                    <li><a data-value="classic" href="#"><i class="whitespace"></i> Classic</a></li>
-                    <li><a data-value="cerulean" href="#"><i class="whitespace"></i> Cerulean</a></li>
-                    <li><a data-value="cyborg" href="#"><i class="whitespace"></i> Cyborg</a></li>
-                    <li><a data-value="simplex" href="#"><i class="whitespace"></i> Simplex</a></li>
-                    <li><a data-value="darkly" href="#"><i class="whitespace"></i> Darkly</a></li>
-                    <li><a data-value="lumen" href="#"><i class="whitespace"></i> Lumen</a></li>
-                    <li><a data-value="slate" href="#"><i class="whitespace"></i> Slate</a></li>
-                    <li><a data-value="spacelab" href="#"><i class="whitespace"></i> Spacelab</a></li>
-                    <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
-                </ul>
-            </div>
-
-
-            <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i> Dropdown <span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <form class="navbar-search pull-left">
-                        <input placeholder="Search" class="search-query form-control col-md-10" name="query"
-                               type="text">
-                    </form>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-    topbar ends -->
 
     <div class="navbar navbar-default" role="navigation">
 
@@ -147,6 +73,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="kreirajEHRDemoOseb()"><span class="glyphicon glyphicon-certificate"></span>  Zgeneriraj EHR</a></li>
+                    <li class="divider"></li>
                     <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
                 </ul>
             </div>
@@ -160,7 +88,7 @@
     <div class="page-header">
         <a href="index.html" style="text-decoration: none;">
             <div align="center">
-                <h4><font color="blue"><span id="naslovnoIme">Gašper Andrejc</span></font>
+                <h4><font color="blue"><span id="naslovnoIme"><img src="images/loader.gif"></span></font>
                     <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
 
             </div>
@@ -188,15 +116,15 @@
                         <li class="nav-header hidden-md">Moja Zdravniška Kartoteka</li>
                         <li><a class="ajax-link" href="družinska_zgodovina.html"><i class="glyphicon glyphicon-list-alt"></i><span> Družinska zgodovina</span></a>
                         </li>
-                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-list-alt"></i><span> Vitalni znaki</span></a>
+                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-heart"></i><span> Vitalni znaki</span></a>
                         </li>
-                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-list-alt"></i><span> Slike</span></a>
+                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-camera"></i><span> Slike</span></a>
                         </li>
-                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-picture"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-tasks"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
                         </li>
-                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-picture"></i><span> Alergije</span></a>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-leaf"></i><span> Alergije</span></a>
                         </li>
-                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-picture"></i><span> Zdravila in reakcije</span></a>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-asterisk"></i><span> Zdravila in reakcije</span></a>
                         </li>
                         <li class="nav-header hidden-md">Drugo</li>
 
@@ -209,7 +137,7 @@
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
-                         <li><a href="#"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
+                         <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
                         <!-- <li><a class="ajax-link" href="icon.html"><i
                                      class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
                         <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -242,7 +170,7 @@
 
                 <div class="col-md-3 col-sm-3 col-xs-6 col-md-offset-1">
                     <a data-toggle="tooltip" title="Dodaj zapis vitalnih znakov." class="well top-block" href="vitalni_znaki.html">
-                        <i class="glyphicon glyphicon-list-alt blue"></i>
+                        <i class="glyphicon glyphicon-heart blue"></i>
 
                         <div>Dodaj zapis vitalnih znakov</div>
                     </a>
@@ -258,7 +186,7 @@
 
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <a data-toggle="tooltip" title="Dodaj izvid." class="well top-block" href="izvidi.html">
-                        <i class="glyphicon glyphicon-folder-open blue"></i>
+                        <i class="glyphicon glyphicon-tasks blue"></i>
 
                         <div>Dodaj izvid</div>
                     </a>
@@ -290,7 +218,7 @@
 
                             <div class="box-icon">
                                 <a href="#" class="btn btn-setting btn-round btn-default"><i
-                                        class="glyphicon glyphicon-cog"></i></a>
+                                        class="glyphicon glyphicon-cog" id="uredi-glavne"></i></a>
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
                                         class="glyphicon glyphicon-chevron-up"></i></a>
                                 <a href="#" class="btn btn-close btn-round btn-default"><i
@@ -299,8 +227,8 @@
                         </div>
                         <div class="box-content row">
                             <div class="col-lg-4 col-md-4 col-sm-4"  style="padding-top: 10px">
-                                <div class="img-thumbnail">
-                                    <img src="images/old_man_by_lash_upon_lash-d5j71hq.jpg">
+                                <div id="indexPicture">
+                                    <img src="images/default-image.png" id="indPc">
                                 </div>
                             </div>
 
@@ -308,17 +236,18 @@
                                 <h1 id="up-ime-opis"><br></h1>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <p><b>Ime:</b></p>
-                                        <p><b>Priimek:</b></p>
-                                        <p><b>Naslov bivanja:</b></p>
-                                        <p><b>Kraj bivanja:</b></p>
-                                        <p><b>Pošta:</b></p>
+                                        <p><b>Ime:</b> <span id="indexIme"></span></p>
+                                        <p><b>Priimek:</b><span id="indexPriimek"></span></p>
+                                        <p><b>Naslov bivanja:</b> <span id="indexNaslovBivanja"></span></p>
+                                        <p><b>Kraj bivanja:</b> <span  id="indexKrajBivanja"></span></p>
+                                        <p><b>Pošta:</b><span id="indexPosta"></span></p>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <p><b>Rojstni datum:</b></p>
-                                        <p style="padding-left: 20px">Starost:</p>
-                                        <p><b>Rojstni kraj:</b></p>
-                                        <p><b>Št. osebnega zavarovanja:</b></p>
+                                        <p><b>Rojstni datum:</b><span id="indexRojDan"></span></p>
+                                        <p style="padding-left: 20px">Starost: <span id="indexStarost"></span></p>
+                                        <p><b>Rojstni kraj:</b><span id="indexRojKraj"></span></p>
+                                        <p><b>Št. ZZZS kartice:</b><span id="indexStZZZS"></span></p>
+                                        <p><b>EHR ID:</b> <span id="indexEhrId" style="font-size: x-small"></span></p>
                                     </div>
 
                                 </div>
@@ -326,6 +255,55 @@
 
 
 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well">
+                            <h2><i class="glyphicon glyphicon-bell"></i> Moj e-Zdravstveni opomnik</h2>
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table" id="tabela-opomnikov">
+                                    <tr>
+                                        <th></th>
+                                        <th>Datum vnosa</th>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-warning-sign yellow"></span> Že tri (3) mesece niste posodobili svojih <a href="vitalni_znaki.html">vitalnih znakov</a>. Čimprej posodobite podatke.</td>
+                                        <td>13.12.2014</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-eye-open blue"></span> Prihaja pomlad - čas alergij na cvetni prah. Priporočam vam LETIZEN-S, ki ste ga do sedaj najbolje prenašali.</td>
+                                        <td>12.12.2014</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-eye-open blue"></span> Bliža se vaš <a href="pregled_podatkov.html">pregled pri kardiologu</a>. Ne pozabite izvidov!</td>
+                                        <td>12.12.2014</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-eye-open blue"></span> Ste v letih, ko je vaš oče dobil diagnozo Parkinsove. Brez preplaha, vendar vam vseeno priporočam testni pregled. Zglasite se pri svoji osebni zdravnici. Kontakt ter ordinacijske ure so napisane malo nižje.</td>
+                                        <td>12.12.2014</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr>
+
+
+                                </table>
                             </div>
 
                         </div>
@@ -350,8 +328,8 @@
                         </div>
                         <div class="box-content">
                             <div class="box-content">
-                                <ul class="dashboard-list">
-                                    <li>
+                                <ul class="dashboard-list" id="zd-ekipa-ul">
+                                   <!-- <li>
                                         <div class="zd-ekipa-img">
                                             <img src="images/doctor-1-female.jpg" alt="..." class="img-thumbnail">
                                         </div>
@@ -386,7 +364,7 @@
                                         <strong>Ordinacijske ure:</strong> <span>Pon-Sre: 07:00-15:00</span>
 
 
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -735,15 +713,80 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <span class="label label-warning">Pazite na pravilni format!</span>
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3>Settings</h3>
+                    <h3>Uredi profil</h3>
                 </div>
                 <div class="modal-body">
-                    <p>Here settings can be configured...</p>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="disabledInput 1" class="col-sm-2 control-label">Ime</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="disabledInput 1" placeholder="" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledInput 2" class="col-sm-2 control-label">Priimek</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="disabledInput 2" placeholder="" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_naslov" class="col-sm-2 control-label">Naslov</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_naslov" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_kraj" class="col-sm-2 control-label">Kraj</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_kraj" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="ind_posta" class="col-sm-2 control-label">Pošta</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_posta" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_rojDat" class="col-sm-2 control-label">Rojstni datum</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_rojDat" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_rojKraj" class="col-sm-2 control-label">Rojstni kraj</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_rojKraj" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="ind_stZZZS" class="col-sm-2 control-label">Št. ZZZS kartice</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="ind_stZZZS" placeholder="">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Prekliči</a>
+                    <a href="javascript:void(0)" onclick="posodobiOsnovnePodatke()" class="btn btn-primary" data-dismiss="modal">Shrani spremembe</a>
                 </div>
             </div>
         </div>
@@ -794,7 +837,12 @@
 <script src="js/charisma.js"></script>
 <script src="js/index.js"></script>
 <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
-<script src="js/vitalni-znaki.js"></script>
+<!-- <script src="js/vitalni-znaki.js"></script>-->
+<script src="ehr-js/ehr.js"></script>
+
+<script type="text/javascript">
+    window.onload = nastaviIndexStran();
+</script>
 
 </body>
 </html>
