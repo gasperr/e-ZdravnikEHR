@@ -24,7 +24,14 @@ function getSessionId() {
 
 sessionId = getSessionId();
 
-var ehrId = localStorage.getItem('ehr_' + globalni_priimek);
+var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
 
 
 $("#timel").html('<ul class="timeline" id="timel"></ul>');
