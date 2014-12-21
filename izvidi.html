@@ -134,7 +134,7 @@
                         </li>
                         <!-- <li><a class="ajax-link" href="grid.html"><i
                                      class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
-                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Pomoč</span></a></li>
+                        <li><a href="map.html"><i class="glyphicon glyphicon-globe"></i><span> Zemljevid</span></a></li>
                         <!-- <li><a class="ajax-link" href="icon.html"><i
                                      class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
                         <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -161,6 +161,25 @@
         <div id="content" class="col-lg-10 col-sm-10">
             <div class="row">
                 <div class="box col-md-12 col-lg-12 col-sm-12">
+                    <div class="box-inner" id="obvestila-izvidi">
+                        <span style="color: grey; font-size: small"><span class="glyphicon glyphicon-info-sign"></span>   Datoteke izvidov se dodajo same dodajo glede na vaše pretekle specialistične preglede. Lahko pa dodatne dodate tudi sami.</span><br>
+                        <span style="color: grey; font-size: small"><span class="glyphicon glyphicon-info-sign"></span>   Prazne datoteke se ob osvežitvi avtomatsko zbrišejo.</span>
+
+                    </div>
+                    <!--/span-->
+
+                </div>
+            </div>
+
+
+
+
+            <!-- content ends -->
+
+
+
+            <div class="row">
+                <div class="box col-md-12 col-lg-12 col-sm-12">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
                             <h2><i class="glyphicon glyphicon-list"></i> Moji izvidi</h2>
@@ -175,7 +194,7 @@
                                             class="glyphicon glyphicon-plus"></i></a>
 
                                 </div>
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i id="kkk"
                                         class="glyphicon glyphicon-chevron-up"></i></a>
 
 
@@ -185,9 +204,14 @@
 
                             </div>
                         </div>
-                        <div class="box-content box">
+                        <div class="box-content box" id="izvidiFolders">
                             <div class="row" id="vsiIzvidi">
-                                <div class="box col-md-4 col-lg-4 col-sm-4">
+                                <div class="row" id="loading">
+                                    <div class="col-md-4 col-lg-4 col-sm-4"></div>
+                                    <div class="col-md-4 col-lg-4 col-sm-4"><img src="images/loader.gif"></div>
+                                    <div class="col-md-4 col-lg-4 col-sm-4"></div>
+                                </div>
+                                <!-- div class="box col-md-4 col-lg-4 col-sm-4">
                                     <a href="javascript:void(0)" class="folder-image">Ortodont</a>
                                 </div>
                                 <div class="box col-md-4 col-lg-4 col-sm-4">
@@ -195,7 +219,7 @@
                                 </div>
                                 <div class="box col-md-4 col-lg-4 col-sm-4">
                                     <a href="javascript:void(0)" class="folder-image">Urolog</a>
-                                </div>
+                                </div -->
                             </div>
                         </div>
                     </div>
@@ -204,11 +228,17 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="box col-md-12 col-lg-12 col-sm-12" id="detail">
+
+                </div>
+            </div>
+
 
 
 
         <!-- content ends -->
-    </div>
+        </div>
         </div>
 <!--/fluid-row-->
 
@@ -281,7 +311,13 @@
 <script src="js/index.js"></script>
 <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
 <script src="js/odpriIzvide.js"></script>
+<script src="ehr-js/ehr.js"></script>
 
+<script type="text/javascript">
+
+    window.onload = nastaviIzvideFolders();
+
+</script>
 
 
 </body>

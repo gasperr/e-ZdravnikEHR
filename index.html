@@ -1,92 +1,745 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	    <title>Pikachu</title>
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	    <script src="demo.js"></script>
-	    <style>
-	  		body {padding: 10px;}
-	  		.btn {margin-top: 10px;}
-	  		.obvestilo {margin-left:10px;}
-	  	</style>
-	</head>
-	<body>
-		<div class="page-header"><h2>Vnos in poizvedovanje po EHR podatkih <small>EhrScape platforma</small></h2></div>
-		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-lg-8 col-md-8 col-sm-8"><b>Kreiraj EHR zapis</b> za novega bolnika</div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiPredlogoBolnika"><option value=""></option><option value="Pujsa,Pepa,1938-10-30T14:58">Pujsa Pepa</option></select></div>
-						</div>
-					</div>
-					<div class="panel-body">
-						<span class="label label-default">Ime</span><input id="kreirajIme" type="text" class="form-control input-mini" placeholder="Osama">
-						<span class="label label-default">Priimek</span><input id="kreirajPriimek" type="text" class="form-control" placeholder="Bin Laden">
-						<span class="label label-default">Datum rojstva</span><input id="kreirajDatumRojstva" type="text" class="form-control" placeholder="1957-03-10T09:08">
-						<button type="button" class="btn btn-primary btn-xs" onclick="kreirajEHRzaBolnika()">Dodaj osnovne podatke o bolniku</button><span id="kreirajSporocilo"></span>
-				  	</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-lg-8 col-md-8 col-sm-8"><b>Preberi EHR zapis</b> obstoječega bolnika</div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiObstojeciEHR"><option value=""></option><option value="254f791d-2e7c-49d9-b646-376f62d6ead5">Dejan Lavbič</option><option value="d564c6a3-5a43-4fcc-bfa7-9ac76e9673bd">Pujsa Pepa</option><option value="b931580f-2b05-488b-985b-8d9ffb08ad02">Ata Smrk</option></select></div>
-						</div>
-					</div>
-					<div class="panel-body">
-						<span class="label label-default">EHR ID</span><input id="preberiEHRid" type="text" class="form-control input-mini" placeholder="7b661e12-3a98-21ad-c29e-2dc9f5a3d885">
-						<button type="button" class="btn btn-primary btn-xs" onclick="preberiEHRodBolnika()">Preberi osnovne podatke o bolniku</button><span id="preberiSporocilo"></span>
-				  	</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-lg-8 col-md-8 col-sm-8"><b>Vnos</b> meritve <b>vitalnih znakov</b> bolnika</div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="preberiObstojeciVitalniZnak"><option value=""></option><option value="b931580f-2b05-488b-985b-8d9ffb08ad02|2014-11-21T11:40Z|185|80.0|36.50|118|92|98|medicinska sestra Smrketa">Ata Smrk</option></select></div>
-						</div>
-					</div>				
-					<div class="panel-body">
-						<span class="label label-default">EHR ID</span><input id="dodajVitalnoEHR" type="text" class="form-control input-mini" placeholder="7b661e12-3a98-21ad-c29e-2dc9f5a3d885">
-						<span class="label label-default">Datum in ura</span><input id="dodajVitalnoDatumInUra" type="text" class="form-control input-mini" placeholder="2014-11-21T11:40Z">
-						<span class="label label-default">Telesna višina</span><div class="input-group"><input id="dodajVitalnoTelesnaVisina" type="text" class="form-control input-mini" placeholder="185"><span class="input-group-addon">cm</span></div>
-						<span class="label label-default">Telesna teža</span><div class="input-group"><input id="dodajVitalnoTelesnaTeza" type="text" class="form-control input-mini" placeholder="80.00"><span class="input-group-addon">kg</span></div>
-						<span class="label label-default">Telesna temperatura</span><div class="input-group"><input id="dodajVitalnoTelesnaTemperatura" type="text" class="form-control input-mini" placeholder="36.50"><span class="input-group-addon">°C</span></div>
-						<span class="label label-default">Sistolični krvni tlak</span><div class="input-group"><input id="dodajVitalnoKrvniTlakSistolicni" type="text" class="form-control input-mini" placeholder="118"><span class="input-group-addon">mm Hg</span></div>
-						<span class="label label-default">Diastolični krvni tlak</span><div class="input-group"><input id="dodajVitalnoKrvniTlakDiastolicni" type="text" class="form-control input-mini" placeholder="92"><span class="input-group-addon">mm Hg</span></div>
-						<span class="label label-default">Nasičenost krvi s kisikom</span><div class="input-group"><input id="dodajVitalnoNasicenostKrviSKisikom" type="text" class="form-control input-mini" placeholder="98"><span class="input-group-addon">%</span></div>
-						<span class="label label-default">Merilec</span><input id="dodajVitalnoMerilec" type="text" class="form-control input-mini" placeholder="medicinska sestra Hrastova Micka">
-						<button type="button" class="btn btn-primary btn-xs" onclick="dodajMeritveVitalnihZnakov()">Dodaj meritve vitalnih znakov</button><span id="dodajMeritveVitalnihZnakovSporocilo"></span>
-				  	</div>
-				</div>
-			</div>	
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6"><b>Pregled</b> meritev <b>vitalnih znakov</b> bolnika</div>
-							<div class="col-lg-3 col-md-3 col-sm-3"><select class="form-control input-sm" id="preberiTipZaVitalneZnake"><option value="telesna temperatura">telesna temperatura</option><option value="telesna temperatura AQL">telesna temperatura (filter na podhladitev)</option><option value="telesna teža">telesna teža</option></select></div>
-							<div class="col-lg-3 col-md-3 col-sm-3"><select class="form-control input-sm" id="preberiEhrIdZaVitalneZnake"><option value=""></option><option value="b931580f-2b05-488b-985b-8d9ffb08ad02">Ata Smrk</option><option value="d564c6a3-5a43-4fcc-bfa7-9ac76e9673bd">Pujsa Pepa</option></select></div>
-						</div>
-					</div>				
-					<div class="panel-body">
-						<span class="label label-default">EHR ID</span><input id="meritveVitalnihZnakovEHRid" type="text" class="form-control input-mini" placeholder="7b661e12-3a98-21ad-c29e-2dc9f5a3d885">
-						<button type="button" class="btn btn-primary btn-xs" onclick="preberiMeritveVitalnihZnakov('telesna temperatura')">Preberi meritve vitalnih znakov</button><span id="preberiMeritveVitalnihZnakovSporocilo"></span>
-						<div id="rezultatMeritveVitalnihZnakov"></div>
-				  	</div>
-				</div>			
-			</div>
-		</div>
-	</body>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>e-Zdravstveni Pomočnik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+    <link href='css/index.css' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+
+
+
+</head>
+
+
+
+<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="images/healthcare-bubble.png">
+
+<body>
+
+    <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-inner" style="text-align: center">
+            <button type="button" class="navbar-toggle pull-left animated flip">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs" id="up-ime-tag"></span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="kreirajEHRDemoOseb()"><span class="glyphicon glyphicon-certificate"></span>  Zgeneriraj EHR</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-off"></span>  Izpiši me</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="page-header">
+        <a href="index.html" style="text-decoration: none;">
+            <div align="center">
+                <h4><font color="blue"><span id="naslovnoIme"><img src="images/loader.gif"></span></font>
+                    <small><font color="#6495ed">in moj e-Zdravnik</font></small><img src="images/e-doc-logo.png"></h4>
+
+            </div>
+        </a>
+            <div id="logout"></div>
+    </div>
+
+
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                    <ul class="nav nav-pills nav-stacked main-menu">
+                        <li class="nav-header">Glavno</li>
+                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Domov</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="pregled_podatkov.html"><i class="glyphicon glyphicon-eye-open"></i><span> Pregled podatkov</span></a>
+                        </li>
+                        <li class="nav-header hidden-md">Moja Zdravniška Kartoteka</li>
+                        <li><a class="ajax-link" href="družinska_zgodovina.html"><i class="glyphicon glyphicon-list-alt"></i><span> Družinska zgodovina</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="vitalni_znaki.html"><i class="glyphicon glyphicon-heart"></i><span> Vitalni znaki</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="slike.html"><i class="glyphicon glyphicon-camera"></i><span> Slike</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="izvidi.html"><i class="glyphicon glyphicon-tasks"></i><span> Izvidi <small>(spec. pregledi)</small></span></a>
+                        </li>
+                        <li><a class="ajax-link" href="alergije.html"><i class="glyphicon glyphicon-leaf"></i><span> Alergije</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="zdravila_reakcije.html"><i class="glyphicon glyphicon-asterisk"></i><span> Zdravila in reakcije</span></a>
+                        </li>
+                        <li class="nav-header hidden-md">Drugo</li>
+
+                        <li class="accordion">
+                            <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> Anatomija telesa</a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="anatomija_telesa_moski.html">Moški</a></li>
+                                <li><a href="#">Ženska</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li><a class="ajax-link" href="grid.html"><i
+                                     class="glyphicon glyphicon-th"></i><span> Grid</span></a></li> -->
+                         <li><a href="map.html"><i class="glyphicon glyphicon-globe"></i><span> Zemljevid</span></a></li>
+                        <!-- <li><a class="ajax-link" href="icon.html"><i
+                                     class="glyphicon glyphicon-star"></i><span> Icons</span></a></li> -->
+                        <!-- <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
+                         </li>
+                         <li><a href="login.html"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
+                         </li> -->
+                     </ul>
+                    <!-- <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label> -->
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+
+
+
+            <div class=" row">
+
+                <div class="col-md-3 col-sm-3 col-xs-6 col-md-offset-1">
+                    <a data-toggle="tooltip" title="Dodaj zapis vitalnih znakov." class="well top-block" href="vitalni_znaki.html">
+                        <i class="glyphicon glyphicon-heart blue"></i>
+
+                        <div>Dodaj zapis vitalnih znakov</div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip" title="Dodaj zdravilo." class="well top-block" href="zdravila_reakcije.html">
+                        <i class="glyphicon glyphicon-asterisk blue"></i>
+
+                        <div>Dodaj zdravilo</div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip" title="Dodaj izvid." class="well top-block" href="izvidi.html">
+                        <i class="glyphicon glyphicon-tasks blue"></i>
+
+                        <div>Dodaj izvid</div>
+                    </a>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-1">
+                    <a data-toggle="tooltip" title="Bližnje zdravstvene ustanove." class="well" id="globe" href="map.html">
+                        <i class="glyphicon glyphicon-globe blue"></i>
+
+                    </a>
+                </div>
+
+            <!--
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
+                        <i class="glyphicon glyphicon-shopping-cart yellow"></i>
+
+                        <div>Poškodbe</div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="#">
+                        <i class="glyphicon glyphicon-envelope red"></i>
+
+                        <div>Messages</div>
+                    </a>
+                </div>
+            -->
+            </div>
+
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well">
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-setting btn-round btn-default"><i
+                                        class="glyphicon glyphicon-cog" id="uredi-glavne"></i></a>
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content row">
+                            <div class="col-lg-4 col-md-4 col-sm-4"  style="padding-top: 10px">
+                                <div id="indexPicture">
+                                    <img src="images/default-image.png" id="indPc">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8 col-md-8">
+                                <h1 id="up-ime-opis"><br></h1>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <p><b>Ime:</b> <span id="indexIme"></span></p>
+                                        <p><b>Priimek:</b><span id="indexPriimek"></span></p>
+                                        <p><b>Naslov bivanja:</b> <span id="indexNaslovBivanja"></span></p>
+                                        <p><b>Kraj bivanja:</b> <span  id="indexKrajBivanja"></span></p>
+                                        <p><b>Pošta:</b><span id="indexPosta"></span></p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <p><b>Rojstni datum:</b><span id="indexRojDan"></span></p>
+                                        <p style="padding-left: 20px">Starost: <span id="indexStarost"></span></p>
+                                        <p><b>Rojstni kraj:</b><span id="indexRojKraj"></span></p>
+                                        <p><b>Št. ZZZS kartice:</b><span id="indexStZZZS"></span></p>
+                                        <p><b>EHR ID:</b> <span id="indexEhrId" style="font-size: x-small"></span></p>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well">
+                            <h2><i class="glyphicon glyphicon-bell"></i> Moj e-Zdravstveni opomnik</h2>
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="panel panel-default" id="div-s-tabelo">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table" id="tabela-opomnikov">
+                                    <tr id="tbh">
+                                        <th></th>
+                                        <th>Datum vnosa</th>
+                                    </tr>
+
+                                    <!--tr>
+                                        <td><span class="glyphicon glyphicon-eye-open blue"></span>Prihaja pomlad - čas alergij na cvetni prah. Priporočam vam LETIZEN-S, ki ste ga do sedaj najbolje prenašali.</td>
+                                        <td>2014-12-12</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-eye-open blue"></span> Ste v letih, ko je vaš oče dobil diagnozo Parkinsove - priporočam testni pregled. Zglasite se pri svoji osebni zdravnici. Kontakt ter ordinacijske ure so napisane malo nižje.</td>
+                                        <td>2014-12-12</td>
+                                        <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik"></a></td>
+                                    </tr-->
+
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-globe"></i> Tweeti povezani z zdravim načinom življenja</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-down"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content" id="tweets">
+                            <div class="box-content">
+                                <a class="twitter-timeline" href="https://twitter.com/zivimozdravo" data-widget-id="544181404880617472">Tweets by @zivimozdravo</a>
+                                <script>
+                                    !function(d,s,id){
+                                        var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                                        if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
+                                            js.src=p+"://platform.twitter.com/widgets.js";
+                                            fjs.parentNode.insertBefore(js,fjs);
+                                        }}(document,"script","twitter-wjs");
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!--/span-->
+
+                <div class="box col-md-6">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-user"></i> Moja zdravniška ekipa</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="box-content">
+                                <ul class="dashboard-list" id="zd-ekipa-ul">
+                                   <!-- <li>
+                                        <div class="zd-ekipa-img">
+                                            <img src="images/doctor-1-female.jpg" alt="..." class="img-thumbnail">
+                                        </div>
+                                        <strong>Naziv:</strong> dr.med. Olga Lonec Pogačar<br>
+                                        <strong>Institucija:</strong> Zdravstveni dom Ljublana, Rožna, Aškarčeva<br>
+                                        <strong>Vrsta:</strong> <span class="label-success label label-default">Osebni zdravnik</span><br>
+                                        <strong>Kontakt:</strong> <span>041-998-123, olga.lonec-pogacar@gmail.com</span><br>
+                                        <strong>Ordinacijske ure:</strong> <span>Pon-Sre: 07:00-15:00</span>
+
+
+                                    </li>
+                                    <li>
+                                        <div class="zd-ekipa-img">
+                                            <img src="images/doctor-1-female.jpg" alt="..." class="img-thumbnail">
+                                        </div>
+                                        <strong>Naziv:</strong> dr.med. Olga Lonec Pogačar<br>
+                                        <strong>Institucija:</strong> Zdravstveni dom Ljublana, Rožna, Aškarčeva<br>
+                                        <strong>Vrsta:</strong> <span class="label-primary label label-default">Kardiolog</span><br>
+                                        <strong>Kontakt:</strong> <span>041-998-123, olga.lonec-pogacar@gmail.com</span><br>
+                                        <strong>Ordinacijske ure:</strong> <span>Pon-Sre: 07:00-15:00</span>
+
+
+                                    </li>
+                                    <li>
+                                        <div class="zd-ekipa-img">
+                                            <img src="images/doctor-1-female.jpg" alt="..." class="img-thumbnail">
+                                        </div>
+                                        <strong>Naziv:</strong> dr.med. Olga Lonec Pogačar<br>
+                                        <strong>Institucija:</strong> Zdravstveni dom Ljublana, Rožna, Aškarčeva<br>
+                                        <strong>Vrsta:</strong> <span class="label-primary label label-default">Urolog</span><br>
+                                        <strong>Kontakt:</strong> <span>041-998-123, olga.lonec-pogacar@gmail.com</span><br>
+                                        <strong>Ordinacijske ure:</strong> <span>Pon-Sre: 07:00-15:00</span>
+
+
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
+
+                <div class="box col-md-6">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-search"></i> Iskalec medicinskega osebja</h2>
+
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div id="logo-zzs"> <img src="images/zzs_logo.png"> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4"></div>
+
+                            </div>
+                            <form class="form-horizontal" role="form" name="form1" method="post" action="http://www.zdravniskazbornica.si/iskalnik/iskalnik.aspx?priimek=&amp;licencaId=" id="form1" target="_blank">
+                                <div>
+                                    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+                                    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+                                    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+                                </div>
+
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    var theForm = document.forms['form1'];
+                                    if (!theForm) {
+                                        theForm = document.form1;
+                                    }
+                                    function __doPostBack(eventTarget, eventArgument) {
+                                        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                                            theForm.__EVENTTARGET.value = eventTarget;
+                                            theForm.__EVENTARGUMENT.value = eventArgument;
+                                            theForm.submit();
+                                        }
+                                    }
+                                    //]]>
+                                </script>
+
+
+                                <script src="http://www.zdravniskazbornica.si/iskalnik/WebResource.axd?d=hT7hJv3uDEEPBtkVqIY_fI3-FWGZG0qkHaA1P_FuIUM6z4Z4sSHlCatzKZsJwZ8KE_GeMddpBrGWWLXCRHLtszLY_c81&amp;t=634994578232059352" type="text/javascript"></script>
+
+
+                                <script src="http://www.zdravniskazbornica.si/iskalnik/ScriptResource.axd?d=Uh1N61ED7qeBqhWkBFBaFWE4HBqkF7fblSpwHG-OU--9iCePUHMpqN-2Cz80Qin3Dstnw3JM2g_zRodI5467Aa96ZWASLU8n24B99XsIgf8HzNcKGqpKsuSxNbeqAmJXV0IDYsszDr9DVlBGkm0JVQHeCUTbgPOKXnBrXZSwqnwg1Zg10&amp;t=6b8c60f9" type="text/javascript"></script>
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+                                    //]]>
+                                </script>
+
+                                <script src="http://www.zdravniskazbornica.si/iskalnik/ScriptResource.axd?d=T6YqmYrEWNoSr_FsPFS9VBlUsFzRcC422JEouAGd_vBoWWPBX3Npu4dCa2s9kpMbqJbSJCRa-X6VUCsPWPz5PSQWf8umg6wO4k5NQVvXtoFU7pz2A70AR5itGSYbodJsOD1-_ZS-O0WfxwoCTUxSuL8KiL6N1qTsR34stwZdhES8nga20&amp;t=6b8c60f9" type="text/javascript"></script>
+                                <div>
+
+                                    <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+                                    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NkNwWQsC5IzGyKkCEtwT10CUTavmwacvKINEEJ8CFyZSHoXgB/w2MaJx8j3b/lW+ZkcHT8D4hTF4RMDLTiRmdrTykEO1gLo96wl2emo6ulXX0nteWV4RHVKbAO2tvYmQNTBUHOQGooi00dxTMA2V+ZtxPHrCcu1PDG5eohTnM75eBK/I9Yva4xHuioqfOJ0Cef7d0ZPdPdkPFnEYOmPXVmSLHcZon7fhPOU3aCzAnPNrhVGv6zgl1udmQpZVBbUQX2c6YsZd1Lp9pipb5SOsjme8cEImXN0x1l9uuUNNUH9xVi9M+sK8nfc/fWKm/foFkQuMUjGRVQLX593s5yPIitm22uXAg2a7htKtj0X9fkFk8cSUFpxXFV6R74ZdQv5/ecIER1LidZAkZbjnnHeusmEDyGktVvVHVoD/+FiuS81+FAFBhqFYLk6sa9ISHe7V0V1LoFR7jnuAjgG2vwfHp/RFwYYDgU8nKURkjcgUbBJshwCNK8YOmgvRHjhVndOoe6pRgr80w/TF2uI3yNo5TUYEKQh9fNdrm6HTBiW+H1ZNF7Gpp3uLrJGK9+d8UEGQg6tjObBGA+ux5N+PLzWtXb/6eB91YVJl8lFRipBG/1Y9CewMfERtdLElqteBMUDCQ1c5CB7xMpfW93vEw4hqG2JBhSI1lm4MUq7S1DjRKaGKrMnteVi3WWJuzuScOjhg34nvvQ==" />
+                                </div>
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('form1'));
+                                    Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+                                    //]]>
+                                </script>
+
+
+
+
+                                <div class="form-group" id="usernameGroup">
+                                    <label class="col-sm-3 control-label">Priimek</label>
+                                    <div class="col-sm-9">
+                                        <input id="TxtPriimek" name="TxtPriimek" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="passGroup">
+                                    <label for="DdlSpecialnost" id="pass" class="col-sm-3 control-label">Licenca</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control input-sm" id="DdlSpecialnost" name="DdlSpecialnost">
+                                            <option selected="selected" value="-1">-- vse --</option>
+                                            <option value="1">Abdominalna kirurgija</option>
+                                            <option value="2">Anesteziologija, reanimatologija in perioperativna intenzivna medicina</option>
+                                            <option value="3">Čeljustna in zobna ortopedija</option>
+                                            <option value="4">Dentalna medicina</option>
+                                            <option value="5">Dermatovenerologija</option>
+                                            <option value="7">Fizikalna in rehabilitacijska medicina</option>
+                                            <option value="8">Gastroenterologija</option>
+                                            <option value="9">Ginekologija in porodništvo</option>
+                                            <option value="10">Hematologija</option>
+                                            <option value="11">Infektologija</option>
+                                            <option value="12">Intenzivna medicina</option>
+                                            <option value="13">Interna medicina</option>
+                                            <option value="14">Internistična onkologija</option>
+                                            <option value="15">Javno zdravje</option>
+                                            <option value="52">Kardiologija in vaskularna medicina</option>
+                                            <option value="16">Kardiovaskularna kirurgija</option>
+                                            <option value="53">Klinična fiziologija</option>
+                                            <option value="17">Klinična genetika</option>
+                                            <option value="18">Klinična mikrobiologija</option>
+                                            <option value="55">Letalska medicina</option>
+                                            <option value="19">Maksilofacialna kirurgija</option>
+                                            <option value="20">Medicina dela, prometa in športa</option>
+                                            <option value="21">Nefrologija</option>
+                                            <option value="22">Nevrokirurgija</option>
+                                            <option value="23">Nevrologija</option>
+                                            <option value="24">Nevropsihiatrija</option>
+                                            <option value="25">Nuklearna medicina</option>
+                                            <option value="26">Oftalmologija</option>
+                                            <option value="27">Onkologija z radioterapijo</option>
+                                            <option value="28">Oralna kirurgija</option>
+                                            <option value="29">Ortopedska kirurgija</option>
+                                            <option value="30">Otorinolaringologija</option>
+                                            <option value="31">Otroška in mladostniška psihiatrija</option>
+                                            <option value="32">Otroška nevrologija</option>
+                                            <option value="33">Otroško in preventivno zobozdravstvo</option>
+                                            <option value="34">Parodontologija</option>
+                                            <option value="35">Patologija</option>
+                                            <option value="36">Pediatrija/Šolska medicina</option>
+                                            <option value="37">Plastična, rekonstrukcijska in estetska kirurgija</option>
+                                            <option value="38">Pnevmologija</option>
+                                            <option value="39">Psihiatrija</option>
+                                            <option value="40">Radiologija</option>
+                                            <option value="41">Revmatologija</option>
+                                            <option value="42">Sodna medicina</option>
+                                            <option value="43">Splošna kirurgija</option>
+                                            <option value="44">Splošna medicina </option>
+                                            <option value="6">Splošna medicina/Družinska medicina (specialist)</option>
+                                            <option value="45">Stomatološka protetika</option>
+                                            <option value="46">Torakalna kirurgija</option>
+                                            <option value="47">Transfuzijska medicina</option>
+                                            <option value="48">Travmatologija</option>
+                                            <option value="49">Urgentna medicina</option>
+                                            <option value="50">Urologija</option>
+                                            <option value="51">Zobne bolezni in endodontija</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="passGroup">
+                                    <label for="DdlRegije" id="pass" class="col-sm-3 control-label">Območna enota</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control input-sm" id="DdlRegije" name="DdlRegije">
+                                            <option selected="selected" value="-1">-- vse --</option>
+                                            <option value="1">CELJE</option>
+                                            <option value="2">KOPER</option>
+                                            <option value="3">KRŠKO</option>
+                                            <option value="4">KRANJ</option>
+                                            <option value="5">LJUBLJANA</option>
+                                            <option value="6">MARIBOR</option>
+                                            <option value="7">MURSKA SOBOTA</option>
+                                            <option value="8">NOVA GORICA</option>
+                                            <option value="9">NOVO MESTO</option>
+                                            <option value="10">RAVNE NA KOROŠKEM</option>
+                                            <option value="11">Ni podatka</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="passGroup">
+                                    <label for="TxtUstanova" id="pass" class="col-sm-3 control-label">Naziv ustanove</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="TxtUstanova" id="TxtUstanova">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="passGroup">
+                                    <label for="DdlVrstaUstanove" id="pass" class="col-sm-3 control-label">Vrsta ustanove</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control input-sm" id="DdlVrstaUstanove" name="DdlVrstaUstanove">
+                                            <option selected="selected" value="-1">-- vse --</option>
+                                            <option value="1">Bolnišnica</option>
+                                            <option value="3">Posebni socialni zavod</option>
+                                            <option value="5">Zdravilišče</option>
+                                            <option value="6">Zdravstveni dom</option>
+                                            <option value="207">Podjetje/Zasebnik brez koncesije</option>
+                                            <option value="208">Podjetje/Zasebnik s koncesijo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-5 col-sm-7">
+                                        <input type="submit" name="BtnIsci" value="Iskanje" id="BtnIsci" class="btn btn-primary" style="width: 30%" />
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                    <!-- content ends -->
+        </div>
+    </div><!--/fluid-row-->
+</div>
+
+
+    <hr>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="label label-warning"><strike>Pazite na pravilni format!</strike></span>
+                    <span class="label label-danger">Spreminjanje osebnih podatkov žal trenutno onemogočeno!</span>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Uredi profil</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="disabledInput 1" class="col-sm-2 control-label">Ime</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="disabledInput 1" placeholder="" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledInput 2" class="col-sm-2 control-label">Priimek</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="disabledInput 2" placeholder="" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_naslov" class="col-sm-2 control-label">Naslov</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_naslov" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_kraj" class="col-sm-2 control-label">Kraj</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_kraj" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="ind_posta" class="col-sm-2 control-label">Pošta</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_posta" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_rojDat" class="col-sm-2 control-label">Rojstni datum</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_rojDat" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ind_rojKraj" class="col-sm-2 control-label">Rojstni kraj</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="ind_rojKraj" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="ind_stZZZS" class="col-sm-2 control-label">Št. ZZZS kartice</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="ind_stZZZS" placeholder="">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Prekliči</a>
+                    <a href="javascript:void(0)" onclick="posodobiOsnovnePodatke()" class="btn btn-primary" data-dismiss="modal" disabled>Shrani spremembe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="https://ucilnica.fri.uni-lj.si/user/profile.php?id=14408" target="_blank">Gašper Andrejc</a> e-Zdravje projekt pri OIS</p>
+
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+    </footer>
+
+</div><!--/.fluid-container-->
+
+
+
+<!-- external javascript -->
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+
+<!-- data table plugin -->
+<script src='js/jquery.dataTables.min.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plugin -->
+<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+<script src="js/index.js"></script>
+<script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+<!-- <script src="js/vitalni-znaki.js"></script>-->
+<script src="ehr-js/ehr.js"></script>
+
+<script type="text/javascript">
+    window.onload = nastaviIndexStran();
+    window.onload = $("#tweets").slideUp();
+    window.onload = generirajDogodke();
+
+</script>
+
+</body>
 </html>

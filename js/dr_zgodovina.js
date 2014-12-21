@@ -20,6 +20,8 @@ var margin = {top: 0, right: 320, bottom: 0, left: 0},
     width = 960 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
+
+
 var tree = d3.layout.tree()
     .separation(function(a, b) { return a.parent === b.parent ? 1 : .5; })
     .children(function(d) { return d.parents; })
@@ -30,6 +32,8 @@ var svg = d3.select(".center-image").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
 d3.json("json/tree.json", function(json) {
 

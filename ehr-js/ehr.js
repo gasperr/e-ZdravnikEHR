@@ -7,6 +7,11 @@ var queryUrl = baseUrl + '/query';
 var username = "ois.seminar";
 var password = "ois4fri";
 
+
+var ehrIdDemolis = "9248f7a9-f7d1-4277-b713-0f61df9db609";
+var ehrIdKonda = "eb44f71b-f046-4e39-99d9-188306d2483d";
+var ehrIdNerovac = "897c5cd6-968b-4a85-b3ed-28e49f3dd8e1";
+
 function getSessionId() {
     var response = $.ajax({
         type: "POST",
@@ -60,15 +65,15 @@ switch(globalno_ime){
         tipZavarovanja = "Nezgodno";
         poteceDne = "15.10.2018";
 
-        nezakljSpecPregledi = [ {specialist: 'Kardiolog', ustanova: 'SB Celje', nasljPregled: '19.5.2015'},
-                                 {specialist: 'Nevrolog', ustanova: 'UKC LJ', nasljPregled: '04.05.2015'}];
-        zdEkipa = [{naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Osebni'},
-            {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Kardiolog'},
-            {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Nevrolog'}];
+        nezakljSpecPregledi = [ {specialist: 'Kardiolog', ustanova: 'SB Celje', nasljPregled: '21.12.2015'},
+                                 {specialist: 'Nevrolog', ustanova: 'UKC LJ', nasljPregled: '21.12.2014'}];
+        zdEkipa = [{naziv: 'dr.med. Majda Potrč Žeru', institucija: 'Zdravstveni dom Velenje', vrsta: 'Osebni'},
+            {naziv: 'dr.med. Matjaž Vrhovac', institucija: 'Splošnja Bolnišnice Celje', vrsta: 'Kardiolog'},
+            {naziv: 'dr.med. Gašper Pogrinjec', institucija: 'Urgentni Klinični Center LJ', vrsta: 'Nevrolog'}];
 
-        zdEkipaVec = [{kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'}];
+        zdEkipaVec = [{kontakt: '041-768-998' , ordUre: 'Pon-Pet: 08h-19h', slika: 'images/doctor-1-female.jpg'},
+            {kontakt: '041-238-228' , ordUre: 'Pon-Pet: 08h-20h', slika: 'images/doctor-1-male.jpg'},
+            {kontakt: '054-723-922' , ordUre: 'Pon-Pet: 08h-15h', slika: 'images/doctor-2-male.jpg'}];
 
         oce = [{name: "Janez Demolis", rojen: "31.5.1929-25.6.2011", genBolezni: 'Parkinsova'}];
         mati = [{name: "Magda Petrovič", rojen: "24.3.1932-25.6.2005", genBolezni: 'Kožni rak (melancitni melanom)'}];
@@ -94,16 +99,16 @@ switch(globalno_ime){
         tipZavarovanja = "Nezgodno";
         poteceDne = "1.8.2022";
 
-        nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'SB Celje', nasljPregled: '10.5.2015'},
-                                 {specialist: 'Hematolog', ustanova: 'UKC Celje', nasljPregled: '22.8.2015'}];
+        nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'ZD Ljubljana', nasljPregled: '29.12.2014'},
+                                 {specialist: 'Hematolog', ustanova: 'UKC Ljubljana', nasljPregled: '20.01.2015'}];
 
-        zdEkipa = [{naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Osebni'},
-            {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Dermatolog'},
-            {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Hematolog'}];
+        zdEkipa = [{naziv: 'dr.med. Klemen Zdržu Lom', institucija: 'Zdravstveni dom Ljubljana, Aškerčeva', vrsta: 'Osebni'},
+            {naziv: 'dr.med. Magda Kolinec', institucija: 'Zdravstveni dom Ljubljana, Aškerčeva', vrsta: 'Dermatolog'},
+            {naziv: 'dr.med. Uroš Doran', institucija: 'Urgentni Klinični Center Ljubljana', vrsta: 'Hematolog'}];
 
-        zdEkipaVec = [{kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'}];
+        zdEkipaVec = [{kontakt: '041-768-118' , ordUre: 'Pon-Pet: 08h-15h', slika: 'images/doctor-1-male.jpg'},
+            {kontakt: '041-111-112' , ordUre: 'Sre-Čet: 08h-15h', slika: 'images/doctor-1-female.jpg'},
+            {kontakt: '041-223-112' , ordUre: 'Petek: 08h-15h', slika: 'images/doctor-2-male.jpg'}];
 
         oce = [{name: "Marko Konda", rojen: "01.4.1952-N/A", genBolezni: "N/A"}];
         mati = [{name: "Marjeta Čuper", rojen: "24.3.1962-15.5.2005", genBolezni: "Rak na črevesju"}];
@@ -130,15 +135,16 @@ switch(globalno_ime){
         poteceDne = "5.11.2028";
 
         nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'SB Celje', nasljPregled: '10.5.2015'},
-            {specialist: 'Onkolog', ustanova: 'UKC LJ', nasljPregled: '15.12.2014'}];
+            {specialist: 'Onkolog', ustanova: 'UKC LJ', nasljPregled: '29.12.2014'},
+            {specialist: 'Kirurgija roke', ustanova: 'SB Celje', nasljPregled: '15.01.2015'}];
 
-        zdEkipa = [{naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Osebni'},
-                 {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Dermatolog'},
-                {naziv: 'dr.med. Olga Lonec Pogačar', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Onkolog'}];
+        zdEkipa = [{naziv: 'dr.med. Urška Jeromal Bulc', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Osebni'},
+                 {naziv: 'dr.med. Majda Knez Kovač', institucija: 'Splošna bolnišnica Celje', vrsta: 'Dermatologinja'},
+                {naziv: 'dr.med. Matjaž Lunilem', institucija: 'UKC LJ', vrsta: 'Onkolog'}];
 
-        zdEkipaVec = [{kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'},
-            {kontakt: '041-768-998' , ordUre: 'Pon-Sre: 08h-15h', slika: 'images/doctor-1-female.jpg'}];
+        zdEkipaVec = [{kontakt: '041-768-998' , ordUre: 'Pon-Pet: 08h-19h', slika: 'images/doctor-1-female.jpg'},
+            {kontakt: '041-228-667' , ordUre: 'Sreda: 08h-16h', slika: 'images/doctor-2-female.jpg'},
+            {kontakt: '041-998-321' , ordUre: 'Pon-Pet: 08h-11h', slika: 'images/doctor-1-male.jpg'}];
 
         oce = [{name: "Grega Nerovec", rojen: "01.4.1971-N/A", genBolezni: 'N/A'}];
         mati = [{name: "Bojana Brešč", rojen: "24.3.1972-15.5.2005", genBolezni: 'Težave s ščitnico'}];
@@ -221,6 +227,14 @@ function kreirajEHRDemoOseb() {
             var ehrId = data.ehrId;
             localStorage.setItem('ehr_'+globalni_priimek, ehrId);
 
+            if(globalni_priimek == "Demolis"){
+                ehrIdDemolis = ehrId;
+            }else if(globalni_priimek == "Konda"){
+                ehrIdKonda = ehrId;
+            }else if(globalni_priimek == "Nerovac"){
+                ehrIdNerovac = ehrId;
+            }
+
             var partyData = {
                 firstNames: ime,
                 lastNames: priimek,
@@ -257,14 +271,14 @@ function kreirajEHRDemoOseb() {
                 success: function (party) {
                     if (party.action == 'CREATE') {
                         location.reload(true);
-                       alert("Uspešno kreiran EHR za osebo "+globalno_ime+" "+globalni_priimek+"; EHR ID = "+ehrId+" .");
+                       prompt("Uspešno kreiran EHR za osebo "+globalno_ime+" "+globalni_priimek+"; Kopiraj in prilepi v ehr.js, vrstica 11, 12, 13", ehrId);
                     }
                 },
                 error: function(err) {
                     alert("ERROR: "+JSON.parse(err.responseText).userMessage);
                 }
             });
-            generirajVitalneZnakeDemoOseb(ime);
+            generirajVitalneZnakeDemoOseb(ime, ehrId);
         }
 
     });
@@ -275,11 +289,12 @@ function kreirajEHRDemoOseb() {
 
 }
 
-function generirajVitalneZnakeDemoOseb(oseba){
+function generirajVitalneZnakeDemoOseb(oseba, ehr){
 
     var datum, merilec, visina, teza, temp, sis, dis, nas;
     var alerg, simp, zdrav, record, traj;
     var naz, razl, jem, zac, kon;
+    var specialist, datumIzvidi, slika, status;
 
     switch(oseba){
         case "Peter":
@@ -292,7 +307,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 120;
             dis = 80;
             nas = 95;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1952-12-2T12:16";
             merilec = "dr med Peter Žgank";
@@ -302,7 +317,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 120;
             dis = 80;
             nas = 97;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1955-02-12T05:56";
             merilec = "dr med Peter Žgank";
@@ -312,7 +327,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 123;
             dis = 81;
             nas = 93;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1955-02-14T08:13";
             merilec = "dr med Peter Žgank";
@@ -322,7 +337,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 119;
             dis = 80;
             nas = 92;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1955-02-17T09:19";
             merilec = "dr med Peter Žgank";
@@ -332,7 +347,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 121;
             dis = 82;
             nas = 97;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1959-10-07T09:15";
             merilec = "dr med Majda Potrč Žeru";
@@ -342,7 +357,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 129;
             dis = 86;
             nas = 98;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1964-11-05T10:10";
             merilec = "dr med Majda Potrč Žeru";
@@ -352,7 +367,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 125;
             dis = 85;
             nas = 95;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1966-10-10T12:10";
             merilec = "dr med Majda Potrč Žeru";
@@ -362,7 +377,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 129;
             dis = 88;
             nas = 98;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1970-05-05T13:12";
             merilec = "dr med Majda Potrč Žeru";
@@ -372,7 +387,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 131;
             dis = 91;
             nas = 92;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
 
             datum = "1980-12-29T22:12";
             merilec = "dežurni doktor dr.med. Marko Kranjec";
@@ -382,7 +397,89 @@ function generirajVitalneZnakeDemoOseb(oseba){
             sis = 135;
             dis = 98;
             nas = 89;
-            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas);
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1981-01-01T11:15";
+            merilec = "dežurni doktor dr.med. Marko Kranjec";
+            visina = 179;
+            teza = 80;
+            temp = 37;
+            sis = 125;
+            dis = 85;
+            nas = 91;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1985-04-11T08:12";
+            merilec = "dežurni doktor dr.med. Marko Kranjec";
+            visina = 180;
+            teza = 79;
+            temp = 36.5;
+            sis = 125;
+            dis = 88;
+            nas = 98;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2005-01-19T10:10";
+            merilec = "Kardiolog dr.med. Matjaž Vrhovac";
+            visina = 180;
+            teza = 87;
+            temp = 36.8;
+            sis = 135;
+            dis = 98;
+            nas = 95;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2006-12-29T11:45";
+            merilec = "Kardiolog dr.med. Matjaž Vrhovac";
+            visina = 180;
+            teza = 88;
+            temp = 36.7;
+            sis = 129;
+            dis = 89;
+            nas = 96;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2008-02-27T09:12";
+            merilec = "Nevrolog dr.med. Gašper Pogrinjec";
+            visina = 180;
+            teza = 86;
+            temp = 36.5;
+            sis = 131;
+            dis = 88;
+            nas = 98;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2009-06-30T18:19";
+            merilec = "Kardiolog dr.med. Matjaž Vrhovac";
+            visina = 180;
+            teza = 87;
+            temp = 36.5;
+            sis = 130;
+            dis = 87;
+            nas = 97;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2011-04-27T10:20";
+            merilec = "dr. med. Majda Potrč Žeru";
+            visina = 180;
+            teza = 88;
+            temp = 37.2;
+            sis = 133;
+            dis = 90;
+            nas = 95;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2013-08-12T12:10";
+            merilec = "Nevrolog dr.med. Gašper Pogrinjec";
+            visina = 180;
+            teza = 89;
+            temp = 37.0;
+            sis = 129;
+            dis = 86;
+            nas = 97;
+            dodajVitalniZnakParametri("Demolis", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+
 
             // dodaj alergije
 
@@ -392,7 +489,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             record = "1966-03-15T12:21";
             traj = "Pomlad";
 
-            dodajAlergijeParametri("Demolis", alerg, simp, record, zdrav, traj);
+            dodajAlergijeParametri("Demolis", alerg, simp, record, zdrav, traj, ehr);
 
             alerg = "Alergija na pršice";
             simp = "Suh kašelj, suha usta";
@@ -400,7 +497,7 @@ function generirajVitalneZnakeDemoOseb(oseba){
             record = "1954-06-12T12:21";
             traj = "Vseskozi";
 
-            dodajAlergijeParametri("Demolis", alerg, simp, record, zdrav, traj);
+            dodajAlergijeParametri("Demolis", alerg, simp, record, zdrav, traj, ehr);
 
 
             //dodaj zdravila
@@ -409,24 +506,635 @@ function generirajVitalneZnakeDemoOseb(oseba){
             jem = "1/24ur";
             zac = "1955-02-12T12:12";
             kon = "1955-02-17T12:12";
-            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon);
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
 
             naz = "Gentamicin";
             razl = "Okužba z gram-neg bakterijo";
             jem = "2/24ur";
-            zac = "1980-12-29T12:12";
-            kon = "1981-01-12T12:12";
-            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon);
+            zac = "1980-11-11T12:12";
+            kon = "1980-11-18T12:50";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
 
-            naz = "Gentamicin";
-            razl = "Okužba";
-            jem = "2/12ur";
-            zac = "1980-12-29T12:12";
-            kon = "2015-01-12T12:12";
-            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon);
+            naz = "Citalopram";
+            razl = "Protidepresivne tablete (stres)";
+            jem = "1/24ur";
+            zac = "1980-12-28T12:12";
+            kon = "1985-04-13T12:50";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Tramadol";
+            razl = "Protibolečinske tablete (zlom goleni)";
+            jem = "1/12ur";
+            zac = "1991-07-12T12:12";
+            kon = "1991-07-19T12:50";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
+
+
+
+            naz = "Letizen-S";
+            razl = "Proti alergiji na cvetni prah";
+            jem = "po potrebi";
+            zac = "1966-03-15T10:10";
+            kon = "2020-12-12T12:50";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Spironolactone";
+            razl = "Za srce";
+            jem = "2/10ur";
+            zac = "2013-11-11T12:12";
+            kon = "2020-01-12T12:12";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Aspicex+";
+            razl = "Za živce";
+            jem = "1/24ur";
+            zac = "1959-10-07T08:12";
+            kon = "1970-05-05T13:15";
+            dodajZdraviloParametri("Demolis",naz, razl, jem, zac, kon, ehr);
+
+
+
+           // var specialist, datumIzvidi, slika, status;
+            specialist = "Dermatolog";
+            datumIzvidi = "2001-01-19T10:10";
+            slika = "https://www.cardiacqa.com/nuclear_report.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+            specialist = "Dermatolog";
+            datumIzvidi = "2002-12-29T11:45";
+            slika = "https://www.thetorturedatabase.org/files/foia_subsite/pdf_images/5131.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+            specialist = "Dermatolog";
+            datumIzvidi = "2003-06-30T18:19";
+            slika = "http://www.cancervacation.com/Images/Reports/report8t.jpg";
+            status = "Zdravljenje zaključeno";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Kardiolog";
+            datumIzvidi = "2005-01-19T10:10";
+            slika = "http://cdn.medgadget.com/img/hjghjd.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+            specialist = "Kardiolog";
+            datumIzvidi = "2006-12-29T11:45";
+            slika = "http://www.clevelandclinicmeded.com/medicalpubs/diseasemanagement/cardiology/cardiac-arrhythmias/images/cardiac-arrhythmiasfig9_large.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+            specialist = "Kardiolog";
+            datumIzvidi = "2009-06-30T18:19";
+            slika = "https://www.cardiacqa.com/nuclear_report.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Nevrolog";
+            datumIzvidi = "2007-12-29T12:12";
+            slika = "http://www.provationmedical.com/files/6713/7510/9449/docudiagram2.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+            specialist = "Nevrolog";
+            datumIzvidi = "2008-02-27T12:12";
+            slika = "https://www.cardiacqa.com/nuclear_report.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Nevrolog";
+            datumIzvidi = "2013-08-12T12:10";
+            slika = "http://link.springer.com/static-content/lookinside/628/art%253A10.1007%252Fs11910-001-0089-4/000.png";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Demolis", specialist, datumIzvidi, slika, status, ehr);
+
 
             break;
 
+        case "Ana":
+            datum = "1984-05-5T12:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 85;
+            teza = 13;
+            temp = 37.2;
+            sis = 125;
+            dis = 80;
+            nas = 98;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1985-02-5T18:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 105;
+            teza = 16;
+            temp = 37.9;
+            sis = 125;
+            dis = 80;
+            nas = 99;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1988-05-5T12:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 125;
+            teza = 25;
+            temp = 40.3;
+            sis = 130;
+            dis = 90;
+            nas = 94;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1988-05-10T12:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 125;
+            teza = 25;
+            temp = 40.1;
+            sis = 130;
+            dis = 90;
+            nas = 94;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1988-05-20T10:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 125;
+            teza = 23;
+            temp = 38.2;
+            sis = 125;
+            dis = 90;
+            nas = 96;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1988-05-30T18:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 125;
+            teza = 26;
+            temp = 36.7;
+            sis = 125;
+            dis = 85;
+            nas = 99;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1990-08-12T10:01";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 130;
+            teza = 33;
+            temp = 36.8;
+            sis = 125;
+            dis = 85;
+            nas = 100;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1995-09-11T08:11";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 155;
+            teza = 53;
+            temp = 37.2;
+            sis = 129;
+            dis = 88;
+            nas = 99;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1999-03-12T10:19";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 175;
+            teza = 67;
+            temp = 36.7;
+            sis = 125;
+            dis = 85;
+            nas = 99;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2003-05-15T12:01";
+            merilec = "Hematolog dr med Uroš Doran";
+            visina = 177;
+            teza = 65;
+            temp = 36.9;
+            sis = 130;
+            dis = 87;
+            nas = 100;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2009-03-16T13:51";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 177;
+            teza = 64;
+            temp = 37.8;
+            sis = 131;
+            dis = 90;
+            nas = 97;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2014-02-10T08:09";
+            merilec = "dr med Klemen Zdržu Lom";
+            visina = 177;
+            teza = 64;
+            temp = 37.3;
+            sis = 125;
+            dis = 91;
+            nas = 98;
+            dodajVitalniZnakParametri("Konda", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            // dodaj alergije
+
+            alerg = "Alergija na čokolado";
+            simp = "Zatečena nadlaket";
+            zdrav = "/";
+            record = "1990-03-15T12:21";
+            traj = "Vseskozi";
+            dodajAlergijeParametri("Konda", alerg, simp, record, zdrav, traj, ehr);
+
+            alerg = "Alergija na sonce";
+            simp = "Srbeča koža";
+            zdrav = "/";
+            record = "2005-12-12T12:21";
+            traj = "Pozimi";
+            dodajAlergijeParametri("Konda", alerg, simp, record, zdrav, traj, ehr);
+
+
+            //dodaj zdravila
+            naz = "Excedrin";
+            razl = "Vročina";
+            jem = "1/24ur";
+            zac = "1984-05-12T12:12";
+            kon = "1984-05-20T12:12";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Theraflu";
+            razl = "Vročina, bolečine";
+            jem = "2/48ur";
+            zac = "1988-05-05T08:00";
+            kon = "1988-06-01T12:12";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Bactrim";
+            razl = "Pljučnica";
+            jem = "1/12ur";
+            zac = "1988-05-05T08:00";
+            kon = "1988-06-01T12:12";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Mepron";
+            razl = "Pljučnica";
+            jem = "1/12ur";
+            zac = "1988-05-05T08:00";
+            kon = "1988-06-01T12:12";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Banophen";
+            razl = "Slabost";
+            jem = "Po potrebi";
+            zac = "1990-05-05T08:00";
+            kon = "1990-05-05T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Letizen-C";
+            razl = "Krči";
+            jem = "Po potrebi";
+            zac = "2000-12-05T08:00";
+            kon = "2005-05-05T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Alumnika";
+            razl = "Protibolečinske (zlom noge)";
+            jem = "Po potrebi";
+            zac = "2005-02-05T08:00";
+            kon = "2005-02-27T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Temodar";
+            razl = "Dermatološke potrebe";
+            jem = "1/12ur";
+            zac = "2005-12-03T08:00";
+            kon = "2020-02-27T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "YAZ";
+            razl = "Kontracepcija";
+            jem = "ciklično";
+            zac = "2000-12-03T08:00";
+            kon = "2999-02-27T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Kartoline";
+            razl = "Zlatenica";
+            jem = "1/teden";
+            zac = "1984-05-04T08:00";
+            kon = "1988-05-11T08:01";
+            dodajZdraviloParametri("Konda",naz, razl, jem, zac, kon, ehr);
+
+        // var specialist, datumIzvidi, slika, status;
+            specialist = "Dermatolog";
+            datumIzvidi = "2005-12-03T10:10";
+            slika = "http://www.dino-lite.eu/images/dinosoft/pdf-export-1.png";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Dermatolog";
+            datumIzvidi = "2007-11-13T10:10";
+            slika = "http://www.the-dermatologist.com/sites/default/files/issues/Screen%20Shot%202014-04-14%20at%202.19.09%20PM.png";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Ortodont";
+            datumIzvidi = "2005-12-03T10:10";
+            slika = "http://seniorcapital.eu/wp-content/themes/patus/images/no-image-half-landscape.png";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Ortodont";
+            datumIzvidi = "2007-11-13T10:10";
+            slika = "http://seniorcapital.eu/wp-content/themes/patus/images/no-image-half-landscape.png";
+            status = "Zdravljenje zaključeno";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Hematolog";
+            datumIzvidi = "2003-05-15T10:10";
+            slika = "https://depts.washington.edu/fasdpn/images/medsum.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Hematolog";
+            datumIzvidi = "2010-05-15T10:10";
+            slika = "http://www.cancervacation.com/Images/Reports/report1.jpg";
+            status = "Naročen na nadaljni pregled";
+            dodajIzvideParametri("Konda", specialist, datumIzvidi, slika, status, ehr);
+            break;
+
+        case "Rok":
+
+            datum = "1995-07-10T12:01";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 59;
+            teza = 5;
+            temp = 36.9;
+            sis = 125;
+            dis = 85;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1997-12-11T14:01";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 80;
+            teza = 10;
+            temp = 38.9;
+            sis = 129;
+            dis = 85;
+            nas = 100;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "1999-05-10T11:00";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 100;
+            teza = 19;
+            temp = 37.0;
+            sis = 120;
+            dis = 80;
+            nas = 98;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2002-08-12T10:05";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 120;
+            teza = 34;
+            temp = 36.8;
+            sis = 125;
+            dis = 84;
+            nas = 100;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2004-10-12T12:05";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 125;
+            teza = 35;
+            temp = 37.8;
+            sis = 130;
+            dis = 84;
+            nas = 100;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2006-08-06T13:10";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 135;
+            teza = 45;
+            temp = 37.1;
+            sis = 135;
+            dis = 87;
+            nas = 98;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2007-02-04T15:10";
+            merilec = "Onkolog dr.med. Matjaž Lumilem";
+            visina = 141;
+            teza = 45;
+            temp = 37.1;
+            sis = 125;
+            dis = 87;
+            nas = 98;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2007-12-04T11:10";
+            merilec = "Onkolog dr.med. Matjaž Lumilem";
+            visina = 144;
+            teza = 46;
+            temp = 37.1;
+            sis = 120;
+            dis = 85;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2008-05-04T16:19";
+            merilec = "Onkolog dr.med. Matjaž Lumilem";
+            visina = 147;
+            teza = 49;
+            temp = 37.5;
+            sis = 125;
+            dis = 89;
+            nas = 97;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2008-08-06T13:10";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 155;
+            teza = 56;
+            temp = 37.0;
+            sis = 128;
+            dis = 88;
+            nas = 97;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2009-11-06T16:10";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 166;
+            teza = 76;
+            temp = 37.3;
+            sis = 128;
+            dis = 88;
+            nas = 97;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2010-05-04T16:19";
+            merilec = "Onkolog dr.med. Matjaž Lumilem";
+            visina = 170;
+            teza = 77;
+            temp = 37.2;
+            sis = 125;
+            dis = 89;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2011-08-06T13:10";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 178;
+            teza = 79;
+            temp = 37.4;
+            sis = 123;
+            dis = 89;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2012-03-01T12:11";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 180;
+            teza = 75;
+            temp = 37.2;
+            sis = 129;
+            dis = 87;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2013-05-04T16:20";
+            merilec = "Onkolog dr.med. Matjaž Lumilem";
+            visina = 179;
+            teza = 77;
+            temp = 37.2;
+            sis = 128;
+            dis = 90;
+            nas = 99;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            datum = "2014-03-01T08:10";
+            merilec = "dr.med. Urška Jeromel Bulc";
+            visina = 191;
+            teza = 78;
+            temp = 37.4;
+            sis = 128;
+            dis = 88;
+            nas = 97;
+            dodajVitalniZnakParametri("Nerovac", datum, merilec, visina, teza, temp, sis, dis, nas, ehr);
+
+            // dodaj alergije
+
+            alerg = "Alergija na sonce";
+            simp = "Srbečica";
+            zdrav = "/";
+            record = "1998-03-15T12:21";
+            traj = "Poleti";
+
+            dodajAlergijeParametri("Nerovac", alerg, simp, record, zdrav, traj, ehr);
+
+            alerg = "Alergija na mlečne izdelke";
+            simp = "Napetost";
+            zdrav = "/";
+            record = "2000-06-12T12:21";
+            traj = "Vseskozi";
+
+            dodajAlergijeParametri("Nerovac", alerg, simp, record, zdrav, traj, ehr);
+
+            alerg = "Alergija na sneg";
+            simp = "Srbečica";
+            zdrav = "/";
+            record = "2003-06-12T12:21";
+            traj = "Pozimi";
+
+            dodajAlergijeParametri("Nerovac", alerg, simp, record, zdrav, traj, ehr);
+
+            //dodaj zdravila
+            naz = "Excedrin";
+            razl = "Vročina";
+            jem = "1/24ur";
+            zac = "2004-10-11T12:12";
+            kon = "2007-02-05T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Excedrin++C";
+            razl = "Vročina";
+            jem = "1/24ur";
+            zac = "1999-05-09T12:12";
+            kon = "2004-10-12T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Amnestion-C";
+            razl = "Diareja";
+            jem = "1/12ur";
+            zac = "1995-05-09T12:12";
+            kon = "1995-05-19T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+
+            naz = "Aspirin";
+            razl = "Migrena";
+            jem = "Po potrebi";
+            zac = "1995-05-09T12:12";
+            kon = "2000-05-19T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Adcetris (Brentuximab Vedotin)";
+            razl = "Rak (onkologija)";
+            jem = "1/24ur";
+            zac = "2007-02-04T12:12";
+            kon = "2999-05-19T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            naz = "Aldara (Imiquimod)";
+            razl = "Rak (onkologija)";
+            jem = "1/24ur";
+            zac = "2007-02-04T12:12";
+            kon = "2999-05-19T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            naz = "BEP";
+            razl = "Rak (onkologija)";
+            jem = "1/24ur";
+            zac = "2007-02-04T12:12";
+            kon = "2999-05-19T12:12";
+            dodajZdraviloParametri("Nerovac",naz, razl, jem, zac, kon, ehr);
+
+            // var specialist, datumIzvidi, slika, status;
+            specialist = "Dermatolog";
+            datumIzvidi = "2005-12-03T10:10";
+            slika = "http://www.dino-lite.eu/images/dinosoft/pdf-export-1.png";
+            status = "Zdravljenje zaključeno - le kontrolni pregled";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Zapestje";
+            datumIzvidi = "2009-11-02T10:10";
+            slika = "http://www.anatomybox.com/wp-content/uploads/2011/06/wrist-labeled-xray.jpg";
+            status = "Prvi pregled - slika - ugotovljen zlom";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Zapestje";
+            datumIzvidi = "2009-11-02T10:10";
+            slika = "http://www.x12express.com/graphics/report.jpg";
+            status = "Prvi pregled - izvid";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Zapestje";
+            datumIzvidi = "2009-12-02T10:10";
+            slika = "http://latimesblogs.latimes.com/babylonbeyond/files/ambulance_report.jpg";
+            status = "Končni izvid, zdravljenje zaključeno";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Onkolog";
+            datumIzvidi = "2007-02-04T10:10";
+            slika = "http://cisncancer.org/diagnosed/images/pathology_report_clip_image003.gif";
+            status = "Ugotovljen rak, razlog konstantne povišane temp.";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Onkolog";
+            datumIzvidi = "2009-11-04T10:10";
+            slika = "http://link.springer.com/static-content/lookinside/91/art%253A10.1186%252F1757-2215-6-34/000.png";
+            status = "Kontrolni pregled, stanje po zdravljenju izboljšuje";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
+
+            specialist = "Onkolog";
+            datumIzvidi = "2013-10-09T10:10";
+            slika = "http://www.springerimages.com/img/Images/BMC/VOL=2006.6/ISU=1/ART=101/MediaObjects/MEDIUM_12911_2005_Article_101_Fig1_HTML.jpg";
+            status = "Stanje po zdravljenju se še izboljšuje";
+            dodajIzvideParametri("Nerovac", specialist, datumIzvidi, slika, status, ehr);
 
     }
 }
@@ -435,6 +1143,14 @@ function nastaviIndexStran(){
 
     sessionId = getSessionId();
     var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
+
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
     }else {
@@ -532,7 +1248,18 @@ function posodobiOsnovnePodatke(){
     $.ajaxSetup({
         headers: {"Ehr-Session": sessionId}
     });
-    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
+
+    if(ehr == null){
+        alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
+    }
     $.ajax({
         url: baseUrl + "/ehr/"+ehrId,
         type: 'GET',
@@ -577,6 +1304,14 @@ function posodobiOsnovnePodatke(){
 function nastaviPregledPodatkov(){
     sessionId = getSessionId();
     var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
+
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
     }else {
@@ -797,10 +1532,17 @@ function dodajVitalniZnak(){
     sessionId = getSessionId();
 
     var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
-    }else{
+    }else {
         var datumInUra = $("#datum-vnosa").val();
         var telesnaVisina = $("#visina-input").val();
         var telesnaTeza = $("#teza-input").val();
@@ -938,9 +1680,11 @@ function dodajVitalniZnak(){
     }
 }
 
-function dodajVitalniZnakParametri(gpriimek, gdat, gmer, gvis, gtez, gtmp, gsis, gdis, gnas){
+function dodajVitalniZnakParametri(gpriimek, gdat, gmer, gvis, gtez, gtmp, gsis, gdis, gnas, ehrId){
     sessionId = getSessionId();
-    var ehr = localStorage.getItem('ehr_'+gpriimek);
+
+    var ehr = ehrId;
+
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
@@ -997,9 +1741,9 @@ function dodajVitalniZnakParametri(gpriimek, gdat, gmer, gvis, gtez, gtmp, gsis,
 
 }
 
-function dodajAlergijeParametri(gpriimek, alerg, simp, record, zdrav, lasts){
+function dodajAlergijeParametri(gpriimek, alerg, simp, record, zdrav, lasts, ehrId){
     sessionId = getSessionId();
-    var ehr = localStorage.getItem('ehr_'+gpriimek);
+    var ehr = ehrId;
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
@@ -1048,9 +1792,9 @@ function dodajAlergijeParametri(gpriimek, alerg, simp, record, zdrav, lasts){
 
 }
 
-function dodajZdraviloParametri(gpriimek, naz, razl, jem, zac, kon){
+function dodajZdraviloParametri(gpriimek, naz, razl, jem, zac, kon, ehrId){
     sessionId = getSessionId();
-    var ehr = localStorage.getItem('ehr_'+gpriimek);
+    var ehr = ehrId;
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
@@ -1101,6 +1845,118 @@ function dodajZdraviloParametri(gpriimek, naz, razl, jem, zac, kon){
     }
 }
 
+function dodajIzvideParametri(gpriimek, spec, datum, slika, status, ehrId){
+    sessionId = getSessionId();
+
+    var ehr = ehrId;
+    if(ehr == null){
+        alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
+    }else{
+
+        $.ajaxSetup({
+            headers: {"Ehr-Session": sessionId}
+        });
+
+        var podatki = {
+            // Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
+            "ctx/language": "en",
+            "ctx/territory": "SI",
+            "medical_diagnosis/problem_diagnosis:0/date_of_onset":datum,
+            "medical_diagnosis/problem_diagnosis:0/clinical_description":spec,
+            "medical_diagnosis/problem_diagnosis:0/comment":status,
+            "medical_diagnosis/problem_diagnosis:0/link_to_supporting_medical_documentation":slika
+
+        };
+
+        var parametriZahteve = {
+            "ehrId": ehr,
+            templateId: 'Medical Diagnosis',
+            format: 'FLAT',
+            committer: 'Someone'
+        };
+
+        $.ajax({
+            url: baseUrl + "/composition?" + $.param(parametriZahteve),
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(podatki),
+            success: function (res) {
+                console.log(res.meta.href);
+
+            },
+            error: function (err) {
+                alert(JSON.parse(err.responseText).userMessage);
+
+            }
+        });
+
+
+    }
+}
+
+function dodajIzvide(){
+    sessionId = getSessionId();
+
+    var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
+    if(ehr == null){
+        alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
+    }else{
+
+        $.ajaxSetup({
+            headers: {"Ehr-Session": sessionId}
+        });
+        var datum = $("#dat").val();
+        var spec = $("#spec").val();
+        var slika = $("#slika").val();
+        var status = $("#comment").val();
+        var podatki = {
+            // Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
+            "ctx/language": "en",
+            "ctx/territory": "SI",
+            "medical_diagnosis/problem_diagnosis:0/date_of_onset":datum,
+            "medical_diagnosis/problem_diagnosis:0/clinical_description":spec,
+            "medical_diagnosis/problem_diagnosis:0/comment":status,
+            "medical_diagnosis/problem_diagnosis:0/link_to_supporting_medical_documentation":slika
+
+        };
+
+        var parametriZahteve = {
+            "ehrId": ehr,
+            templateId: 'Medical Diagnosis',
+            format: 'FLAT',
+            committer: 'Someone'
+        };
+
+        $.ajax({
+            url: baseUrl + "/composition?" + $.param(parametriZahteve),
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(podatki),
+            success: function (res) {
+                console.log(res.meta.href);
+                $("#obvestila-izvidi").append('<br><br><span class="label label-info obvestiloo">Nov izvid se nalaga....</span>');
+                setTimeout(function(){ $('.obvestiloo').fadeOut(); location.reload(true) }, 5000);
+
+            },
+            error: function (err) {
+                alert(JSON.parse(err.responseText).userMessage);
+
+            }
+        });
+
+
+    }
+
+
+}
+
 function preveriVitalne(vitalni, data,  dis){
     if(vitalni == "itm"){
         if(data > 18.5 && data < 24.9){
@@ -1117,7 +1973,7 @@ function preveriVitalne(vitalni, data,  dis){
         if(data > 35.8 && data < 37.3){
             return 0;
         }
-        else if((data < 35.8 && data > 35.5) || (data > 37.3 && data < 37.6)){
+        else if((data <= 35.8 && data >= 35.5) || (data >= 37.3 && data <= 37.6)){
             return 1;
         }
         else if((data < 35.5) || (data > 37.6)){
@@ -1125,10 +1981,10 @@ function preveriVitalne(vitalni, data,  dis){
         }
     }
     else if(vitalni == "sis"){
-        if(data >= 120 && data <= 129 && dis >= 80 && dis <= 84){
+        if(data >= 120 && data <= 129 && dis >= 80 && dis <= 86){
             return 0;
         }
-        else if((data >= 130 && data <= 139 && dis >= 85 && dis <= 89)){
+        else if((data >= 130 && data <= 139 && dis > 86 && dis <= 89)){
             return 1;
         }
         else if((data >= 140) || (dis >= 90)){
@@ -1360,7 +2216,14 @@ function nastaviVitalneZnake(){
 function nastaviVitalneZnake1() {
     sessionId = getSessionId();
 
-    var ehrId = localStorage.getItem('ehr_' + globalni_priimek);
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
 
 
     $("#timel").html('<ul class="timeline" id="timel"></ul>');
@@ -1527,7 +2390,14 @@ function nastaviAlergije(){
     sessionId = getSessionId();
     var date = new Date();
     $("#al_prvic").val(date.toISOString());
-    var ehrId = localStorage.getItem('ehr_' + globalni_priimek);
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
     $("#tabela-alergij").html("<tr> <th>Alergija</th> <th>Simptomi</th> <th>Zdravila</th> <th>Prvič opažena</th> <th>Trajanja</th> </tr>");
 
 
@@ -1592,6 +2462,196 @@ function nastaviAlergije(){
     }
 }
 
+function nastaviIzvideFolders(){
+    sessionId = getSessionId();
+
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+   /* if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }*/
+
+    if (ehrId == null) {
+        alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
+    } else {
+        $.ajax({
+            url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
+            type: 'GET',
+            headers: {"Ehr-Session": sessionId},
+            success: function (data) {
+                var party = data.party;
+                var AQL =
+                    "select "+
+                    "a_a/data[at0002]/events[at0003]/time/value as cas, "+
+                    "a_a/data[at0001]/items[at0009]/value as Clinical_description, "+
+                    "a_a/data[at0001]/items[at0069]/value as Comment, "+
+                    "a_a/data[at0001]/items[at0010]/value as Date_of_onset, "+
+                    "a_a/protocol[at0074]/items[at0075]/value as Link_to_supporting_medical_documentation "+
+                    "from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+                    "contains COMPOSITION a "+
+                    "contains EVALUATION a_a[openEHR-EHR-EVALUATION.problem_diagnosis.v1] "+
+                    "offset 0";
+
+                $.ajax({
+                    url: baseUrl + "/query?" + $.param({"aql": AQL}),
+                    type: 'GET',
+                    headers: {"Ehr-Session": sessionId},
+                    success: function (res) {
+                        if (res) {
+
+                            var rows = res.resultSet;
+                           // alert(JSON.stringify(rows[0]));
+
+
+
+                            for (var i in rows) {
+                                var currentFolders;
+                                currentFolders = $(".folder-image").text();
+
+                                var datum = rows[i].Date_of_onset.value.split("T")[0];
+                                var spec = rows[i].Clinical_description.value;
+                                var slika = rows[i].Link_to_supporting_medical_documentation.value;
+                                var status = rows[i].Comment.value;
+
+
+
+                                if(currentFolders.indexOf(spec) > -1){
+
+                                }
+                                else{
+                                    var html1 = '<div class="box col-md-4 col-lg-4 col-sm-4"> <a href="javascript:void(0)" class="folder-image">'+spec+'</a> </div>'
+                                    $("#vsiIzvidi").append(html1);
+
+                                    var html2 =  '<div class="col-md-3 col-lg-3 col-sm-3"> <br>'+
+                                        ' <ul class="thumbnails gallery">'+
+                                        '<li id="image-1" class="thumbnail">'+
+                                        '<a style="background:url('+slika+')"'+
+                                        ' title="Sample Image 1" href="'+slika+'" target="_blank">'+
+                                        ' <img src="'+slika+'" alt="Sample Image 1">'+
+                                        ' </a><br>'+
+                                        ' <div class="caption"> <h3>'+datum+'</h3> <p>'+status+'</p> </div>'+
+                                        ' </li>'+
+                                        ' </ul>'+
+                                        ' </div>';
+
+                                }
+
+                            }
+                            $("#loading").hide();
+
+                        } else {
+                            alert("ni podatkov");
+                        }
+
+                    },
+                    error: function (err) {
+                        alert(JSON.parse(err.responseText).userMessage);
+                    }
+                });
+            },
+            error: function (err) {
+                alert(JSON.parse(err.responseText).userMessage);
+            }
+        });
+    }
+}
+
+function nastaviIzvideIzvidi(){
+    sessionId = getSessionId();
+
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
+
+    if (ehrId == null) {
+        alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
+    } else {
+        $.ajax({
+            url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
+            type: 'GET',
+            headers: {"Ehr-Session": sessionId},
+            success: function (data) {
+                var party = data.party;
+                var AQL =
+                    "select "+
+                    "a_a/data[at0002]/events[at0003]/time/value as cas, "+
+                    "a_a/data[at0001]/items[at0009]/value as Clinical_description, "+
+                    "a_a/data[at0001]/items[at0069]/value as Comment, "+
+                    "a_a/data[at0001]/items[at0010]/value as Date_of_onset, "+
+                    "a_a/protocol[at0074]/items[at0075]/value as Link_to_supporting_medical_documentation "+
+                    "from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+                    "contains COMPOSITION a "+
+                    "contains EVALUATION a_a[openEHR-EHR-EVALUATION.problem_diagnosis.v1] "+
+                    "offset 0";
+
+                $.ajax({
+                    url: baseUrl + "/query?" + $.param({"aql": AQL}),
+                    type: 'GET',
+                    headers: {"Ehr-Session": sessionId},
+                    success: function (res) {
+                        if (res) {
+
+                            var rows = res.resultSet;
+                            // alert(JSON.stringify(rows[0]));
+
+
+
+                            for (var i in rows) {
+                                var currentFolders;
+                                currentFolders = $(".folder-image").text();
+
+                                var datum = rows[i].Date_of_onset.value.split("T")[0];
+                                var spec = rows[i].Clinical_description.value;
+                                var slika = rows[i].Link_to_supporting_medical_documentation.value;
+                                var status = rows[i].Comment.value;
+
+
+
+
+                                    var html =  '<div class="col-md-3 col-lg-3 col-sm-3"> <br>'+
+                                        ' <ul class="thumbnails gallery">'+
+                                        '<li id="image-1" class="thumbnail">'+
+                                        '<a style="background:url('+slika+')"'+
+                                        ' title="Sample Image 1" href="'+slika+'" target="_blank">'+
+                                        ' <img src="'+slika+'" alt="Sample Image 1">'+
+                                        ' </a><br>'+
+                                        ' <div class="caption"> <h3>'+datum+'</h3> <p>'+status+'</p> </div>'+
+                                        ' </li>'+
+                                        ' </ul>'+
+                                        ' </div>';
+
+
+                                        $("#" + spec).append(html);
+
+
+
+                            }
+
+                        } else {
+                            alert("ni podatkov");
+                        }
+
+                    },
+                    error: function (err) {
+                        alert(JSON.parse(err.responseText).userMessage);
+                    }
+                });
+            },
+            error: function (err) {
+                alert(JSON.parse(err.responseText).userMessage);
+            }
+        });
+    }
+}
+
 function dodajAlergijo(){
     sessionId = getSessionId();
 
@@ -1600,6 +2660,13 @@ function dodajAlergijo(){
     var alerg, simp, record, zdrav, lasts;
 
     var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
@@ -1663,7 +2730,14 @@ function nastaviZdravila(){
     $("#zd_zacetek").val(now.toISOString());
     $("#zd_konec").val(now.toISOString());
 
-    var ehrId = localStorage.getItem('ehr_' + globalni_priimek);
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
     if (ehrId == null) {
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
     } else {
@@ -1674,18 +2748,25 @@ function nastaviZdravila(){
             success: function (data) {
                 var party = data.party;
                 var AQL =
-                    "select "+
-                        "a_a/activities[at0001]/description[at0002]/items[at0003]/value/value as Medicine, "+
-                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0012]/value/value as Start_date, "+
-                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0013]/value/value as Stop_date, "+
-                        "a_b/items[at0003]/value/value as Description, "+
-                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0008]/value/value as Timing_description "+ "" +
-                        "from EHR e[e/ehr_id/value='" + ehrId + "'] " +
-                        "contains COMPOSITION a "+
-                        "contains ("+
-                        "INSTRUCTION a_a[openEHR-EHR-INSTRUCTION.medication.v1] and "+
-                        "CLUSTER a_b[openEHR-EHR-CLUSTER.medication_amount.v1]) "+
-                        "offset 0;"
+                    "select " +
+                    "a_a/data[at0002]/events[at0003]/time/value as cas, " +
+                    "a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Temperature, " +
+                    "a_b/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude as Systolic, " +
+                    "a_b/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude as Diastolic, " +
+                    "a_c/data[at0001]/events[at0002]/data[at0003]/items[at0004, 'Body Height/Length']/value/magnitude as Body_Height_Length, " +
+                    "a_d/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude as Body_Weight, " +
+                    "a_f/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value/numerator as spO2, " +
+                    "a_f/data[at0001]/events[at0002]/data[at0003]/items[at0036]/value/value as ime "+
+                    "from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+                    "contains COMPOSITION a " +
+                    "contains (" +
+                    "OBSERVATION a_a[openEHR-EHR-OBSERVATION.body_temperature.v1] and " +
+                    "OBSERVATION a_b[openEHR-EHR-OBSERVATION.blood_pressure.v1] and " +
+                    "OBSERVATION a_c[openEHR-EHR-OBSERVATION.height.v1] and " +
+                    "OBSERVATION a_d[openEHR-EHR-OBSERVATION.body_weight.v1] and " +
+                    "OBSERVATION a_f[openEHR-EHR-OBSERVATION.indirect_oximetry.v1]) "+
+                    "order by a_a/data[at0002]/events[at0003]/time/value asc " +
+                    "offset 0";
 
                 $.ajax({
                     url: baseUrl + "/query?" + $.param({"aql": AQL}),
@@ -1695,28 +2776,265 @@ function nastaviZdravila(){
                         if (res) {
                             var rows = res.resultSet;
                             for (var i in rows) {
-                                var med = rows[i].Medicine;
-                                var sd = rows[i].Start_date;
-                                var ed = rows[i].Stop_date;
-                                var raz = rows[i].Description;
-                                var jem = rows[i].Timing_description;
+                                var datumInUra = rows[i].cas;
+                                var telesnaVisina = rows[i].Body_Height_Length;
+                                var telesnaTeza = rows[i].Body_Weight;
+                                var telesnaTemperatura = rows[i].Temperature;
+                                var sistolicniKrvniTlak = rows[i].Systolic;
+                                var diastolicniKrvniTlak = rows[i].Diastolic;
+                                var nasicenostKrviSKisikom = rows[i].spO2;
 
-                                var html = '<tr> <td>'+med+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+sd.split("T")[0]+' - '+ed.split("T")[0]+'</td></tr>'
-                                var now = new Date();
+                                var tezaColor = "";
+                                var itmColor = "";
+                                var tempColor = "";
+                                var sisColor = "";
+                                var disColor = "";
+                                var nasColor = "";
 
-                                var zdaj = parseInt(now.toISOString().split("T")[0].replace('-', ''));
-                                var zdKonec = parseInt(ed.split("T")[0].replace('-', ''));
-                                if(zdaj < zdKonec){
-                                    html = '<tr> <td>'+med+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+sd.split("T")[0]+'</td> <td>'+ed.split("T")[0]+'</td> <td><a href="javascript:void(0)" class="btn btn-info zaklj"><i class="glyphicon glyphicon-check"></i></a> </td></tr>'
-                                    $("#tabelaZdravil").append(html);
+                                var telVisM = telesnaVisina / 100;
+                                var itm = parseFloat(telesnaTeza) / (parseFloat(telVisM) * parseFloat(telVisM));
+                                itm = Number((itm).toFixed(1));
+
+                                var danger = 0;
+                                var warning = 0;
+                                switch (preveriVitalne("itm", itm)) {
+                                    case 1:
+                                        itmColor = "darkorange";
+                                        tezaColor = "darkorange";
+                                        warning = 1;
+                                        break;
+                                    case 2:
+                                        itmColor = "red";
+                                        tezaColor = "red";
+                                        danger = 1;
+                                        break;
                                 }
-                                else{
-                                    $("#tabela-zdravil").append(html);
+                                switch (preveriVitalne("temp", telesnaTemperatura)) {
+                                    case 1:
+                                        tempColor = "darkorange";
+                                        warning = 1;
+                                        break;
+                                    case 2:
+                                        tempColor = "red";
+                                        danger = 1;
+                                }
+                                switch (preveriVitalne("sis", sistolicniKrvniTlak, diastolicniKrvniTlak)) {
+                                    case 1:
+                                        sisColor = "darkorange";
+                                        disColor = sisColor;
+                                        warning = 1;
+                                        break;
+                                    case 2:
+                                        sisColor = "red";
+                                        disColor = sisColor;
+                                        danger = 1;
+                                }
+                                switch (preveriVitalne("nas", nasicenostKrviSKisikom)) {
+                                    case 1:
+                                        nasColor = "darkorange";
+                                        warning = 1;
+                                        break;
+                                    case 2:
+                                        nasColor = "red"
+                                        danger = 1;
+                                }
+
+                                var statusLabel = "success";
+
+                                if (warning == 1) {
+                                    statusLabel = "warning";
+                                }
+                                if (danger == 1) {
+                                    statusLabel = "danger";
+                                }
+
+                                var statusMessage, statusIcon;
+                                switch (statusLabel) {
+                                    case "success":
+                                        statusMessage = "Vitalni znaki zadovoljivi.";
+                                        statusIcon = "thumbs-up";
+                                        break;
+                                    case "warning":
+                                        statusMessage = "Bodite pozorni na označena področja.";
+                                        statusIcon = "eye-open";
+                                        break;
+                                    case "danger":
+                                        statusMessage = "Čimprej se posvetujte s svojim zdravnikom."
+                                        statusIcon = "warning-sign"
 
                                 }
+
 
 
                             }
+                            $.ajax({
+                                url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
+                                type: 'GET',
+                                headers: {"Ehr-Session": sessionId},
+                                success: function (data) {
+                                    var party = data.party;
+                                    var AQL =
+                                        "select "+
+                                        "a_a/activities[at0001]/description[at0002]/items[at0003]/value/value as Medicine, "+
+                                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0012]/value/value as Start_date, "+
+                                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0013]/value/value as Stop_date, "+
+                                        "a_b/items[at0003]/value/value as Description, "+
+                                        "a_a/activities[at0001]/description[at0002]/items[at0010, 'Medication timing']/items[at0008]/value/value as Timing_description "+ "" +
+                                        "from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+                                        "contains COMPOSITION a "+
+                                        "contains ("+
+                                        "INSTRUCTION a_a[openEHR-EHR-INSTRUCTION.medication.v1] and "+
+                                        "CLUSTER a_b[openEHR-EHR-CLUSTER.medication_amount.v1]) "+
+                                        "offset 0;";
+
+                                    $.ajax({
+                                        url: baseUrl + "/query?" + $.param({"aql": AQL}),
+                                        type: 'GET',
+                                        headers: {"Ehr-Session": sessionId},
+                                        success: function (res) {
+                                            if (res) {
+                                                var rows1 = res.resultSet;
+
+                                                for (var i in rows1) {
+                                                    var med = rows1[i].Medicine;
+                                                    var sd = rows1[i].Start_date;
+                                                    var ed = rows1[i].Stop_date;
+                                                    var raz = rows1[i].Description;
+                                                    var jem = rows1[i].Timing_description;
+
+                                                    var html = '<tr> <td>'+med+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+sd.split("T")[0]+' - '+ed.split("T")[0]+'</td></tr>'
+                                                    var now = new Date();
+                                                    var dolgo = false;
+                                                    if(ed.split("-")[0] - sd.split("-")[0] > 5){
+                                                        dolgo = true;
+                                                    }
+                                                    var zdaj = parseInt(now.toISOString().split("T")[0].replace('-', ''));
+                                                    var zdKonec = parseInt(ed.split("T")[0].replace('-', ''));
+                                                    if(zdaj < zdKonec){
+                                                        html = '<tr> <td>'+med+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+sd.split("T")[0]+'</td> <td>'+ed.split("T")[0]+'</td> <td><a href="javascript:void(0)" class="btn btn-info zaklj"><i class="glyphicon glyphicon-check"></i></a> </td></tr>'
+                                                        $("#tabelaZdravil").append(html);
+                                                    }
+                                                    else{
+                                                        var stevec = 0;
+
+
+                                                        var status = 0;
+
+                                                        var slabsa = false;
+                                                        var ostajaIsto = true;
+                                                        var prvic = true;
+                                                        for(var j=0; j < rows.length-1; j++){
+
+                                                            //v if zanki imamo vitalne znake med jemanjem zdravila
+                                                            //alert(stevecEl);
+
+
+                                                            if(rows[j].cas >= rows1[i].Start_date && rows[j+1].cas <= rows1[i].Stop_date){
+                                                                var telesnaVisina = rows[j].Body_Height_Length;
+                                                                var telesnaTeza = rows[j].Body_Weight;
+                                                                var telesnaTemperatura = rows[j].Temperature;
+                                                                var sistolicniKrvniTlak = rows[j].Systolic;
+                                                                var diastolicniKrvniTlak = rows[j].Diastolic;
+                                                                var nasicenostKrviSKisikom = rows[j].spO2;
+
+                                                                if(prvic == true){
+                                                                    var array = [];
+                                                                    array.push(preveriVitalne("temp", telesnaTemperatura));
+                                                                    array.push(preveriVitalne("sis", sistolicniKrvniTlak, diastolicniKrvniTlak));
+                                                                    array.push(preveriVitalne("nas", nasicenostKrviSKisikom));
+                                                                    status = findBiggest(array);
+                                                                    prvic = false;
+                                                                    if(med == "Excedrin") {
+                                                                       // alert(status);
+                                                                    }
+                                                                }
+
+
+                                                                var vis = rows[j+1].Body_Height_Length;
+                                                                var tez = rows[j+1].Body_Weight;
+                                                                var temp = rows[j+1].Temperature;
+                                                                var sis = rows[j+1].Systolic;
+                                                                var dis = rows[j+1].Diastolic;
+                                                                var nas = rows[j+1].spO2;
+
+
+                                                                var telVisM = telesnaVisina / 100;
+                                                                var itm = parseFloat(telesnaTeza) / (parseFloat(telVisM) * parseFloat(telVisM));
+                                                                itm = Number((itm).toFixed(1));
+
+                                                                var telVisM1 = vis / 100;
+                                                                var itm1 = parseFloat(tez) / (parseFloat(telVisM1) * parseFloat(telVisM1));
+                                                                itm1 = Number((itm1).toFixed(1));
+
+                                                                var statusTmp = vitalniZnakiSlabsajo(itm, telesnaTemperatura, sistolicniKrvniTlak, diastolicniKrvniTlak, nasicenostKrviSKisikom,
+                                                                                                itm1, temp, sis, dis, nas);
+
+
+                                                                if(statusTmp > status){
+                                                                    slabsa = true;
+                                                                }
+                                                                if(statusTmp <= status && statusTmp == 0){
+                                                                    slabsa = false;
+                                                                }
+
+                                                                if(statusTmp != status){
+                                                                    ostajaIsto = false;
+                                                                }
+
+                                                                status = statusTmp;
+
+                                                                if(med == "Kartoline"){
+                                                                    //alert(slabsa+"-- tempPrej:"+telesnaTemperatura+"--potem--"+temp+".."+statusTmp);
+                                                                }
+
+
+
+                                                                stevec++;
+                                                            }
+                                                        }
+                                                        if(stevec < 2){
+                                                            html = '<tr> <td>'+med+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+sd.split("T")[0]+' - '+ed.split("T")[0]+'</td><td><span class="label label-warning" data-toggle="tooltip" title="Vitalnih znakov v času jemanja je premalo za učinkovito napoved.">Priporočen posvet</span></td></tr>'
+
+                                                        }
+
+                                                        else if(ostajaIsto == true) {
+                                                            html = '<tr> <td>' + med + '</td> <td>' + raz + '</td> <td>' + jem + '</td> <td>' + sd.split("T")[0] + ' - ' + ed.split("T")[0] + '</td><td><span class="label label-warning" data-toggle="tooltip" title="Vitalni znaki se v času jemanja niso izboljšali; zdravilo vam morda ne pomaga kot bi bilo želeno.">Priporočen posvet</span></td></tr>'
+                                                        }
+                                                        else if(slabsa == true) {
+                                                            html = '<tr> <td>' + med + '</td> <td>' + raz + '</td> <td>' + jem + '</td> <td>' + sd.split("T")[0] + ' - ' + ed.split("T")[0] + '</td><td><span class="label label-danger" data-toggle="tooltip" title="Vitalni znaki so se vam v času jemanja slabšali. Zdravilo ima lahko na vas negativen učinek.">Nujen posvet</span></td></tr>'
+                                                        }
+                                                        else{
+                                                            if(dolgo == true){
+                                                                html = '<tr> <td>' + med + '</td> <td>' + raz + '</td> <td>' + jem + '</td> <td>' + sd.split("T")[0] + ' - ' + ed.split("T")[0] + '</td><td data-toggle="tooltip" title="Zdravilo na vas pozitivno deluje. Vendar POZOR: Čas jemanja je več kot 5 let, učinek zdravila je zato težje determiniran, status pa lahko zavajujoč."><span class="label label-success" >Dobro</span><span class="glyphicon glyphicon-warning-sign" style="color: darkorange; margin-left: 1em"></span></td></tr>'
+
+                                                            }
+                                                            else{
+                                                                html = '<tr> <td>' + med + '</td> <td>' + raz + '</td> <td>' + jem + '</td> <td>' + sd.split("T")[0] + ' - ' + ed.split("T")[0] + '</td><td><span class="label label-success" data-toggle="tooltip" title="Zdravilo na vas pozitivno deluje.">Dobro</span></td></tr>'
+                                                            }
+                                                        }
+
+                                                        $("#tabela-zdravil").append(html);
+
+                                                    }
+
+
+                                                }
+                                                $("#loading").hide();
+
+                                            } else {
+                                                alert("ni podatkov");
+                                            }
+
+                                        },
+                                        error: function (err) {
+                                            alert(JSON.parse(err.responseText).userMessage);
+                                        }
+                                    });
+                                },
+                                error: function (err) {
+                                    alert(JSON.parse(err.responseText).userMessage);
+                                }
+                            });
 
                         } else {
                             alert("ni podatkov");
@@ -1732,18 +3050,77 @@ function nastaviZdravila(){
                 alert(JSON.parse(err.responseText).userMessage);
             }
         });
+
+
+
+
+
+
+
+
     }
+}
+
+function findBiggest(array){
+    var max = 0;
+    for(var i = 0; i  < array.length; i++){
+        if(array[i] > max){
+            max = array[i];
+        }
+    }
+    return max;
+}
+
+
+
+function vitalniZnakiSlabsajo(itm, temp, sis, dis, nas, itm1, temp1, sis1, dis1, nas1){
+    var statusItm, statusItmPrej,
+        statusTemp, statusTempPrej,
+        statusTlak, statusTlakPrej,
+        statusNas, statusNasPrej;
+
+    statusItm = preveriVitalne("itm", itm1);
+    statusTemp = preveriVitalne("temp", temp1);
+    statusTlak = preveriVitalne("sis", sis1, dis1);
+    statusNas = preveriVitalne("nas", nas1);
+
+    statusItmPrej = preveriVitalne("itm", itm);
+    statusTempPrej = preveriVitalne("temp", temp);
+    statusTlakPrej = preveriVitalne("sis", sis, dis);
+    statusNasPrej = preveriVitalne("nas", nas);
+
+    if(statusItm > statusItmPrej || statusTemp > statusTempPrej || statusTlak > statusTlakPrej || statusNas > statusNasPrej){
+        return 2;
+    }
+    else if(statusItm == statusItmPrej && statusItm != 0 || statusTemp == statusTempPrej && statusTemp != 0 || statusTlak == statusTlakPrej && statusTlak != 0 || statusNas == statusNasPrej && statusNas != 0){
+        return 1;
+    }
+
+    return 0;
 }
 
 function dodajZdravilo(){
     sessionId = getSessionId();
     var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehr = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehr = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehr = ehrIdNerovac;
+    }
 
     var al = $("#zd_naziv").val();
     var sm = $("#zd_razlog").val();
     var zd = $("#zd_jemanje").val();
     var pr = $("#zd_zacetek").val();
     var tr = $("#zd_konec").val();
+
+    if(al == "" || sm == "" || zd == "" || pr == "" || tr == ""){
+        $("#zz").append('<span id="warning" style="font-size: xx-small; color: red" class="glyphicon glyphicon-warning-sign">  Prosimo izpolnite vsa polja.</span>');
+    }else{
+        $("#warning").hide();
+    }
 
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
@@ -1782,7 +3159,7 @@ function dodajZdravilo(){
             data: JSON.stringify(podatki),
             success: function (res) {
                 console.log(res.meta.href);
-                var html = '<tr> <td>'+al+'</td> <td>'+sm+'</td> <td>'+zd+'</td> <td>'+pr.split("T")[0]+' - '+tr.split("T")[0]+'</td></tr>'
+                var html = '<tr> <td>'+al+'</td> <td>'+sm+'</td> <td>'+zd+'</td> <td>'+pr.split("T")[0]+' - '+tr.split("T")[0]+'</td><td><span style="font-size: smaller; color: grey">(potrebna osvežitev strani)</span></td></tr>'
                 var now = new Date();
 
                 if(now.toISOString() < tr){
@@ -1795,13 +3172,17 @@ function dodajZdravilo(){
                 }
             },
             error: function (err) {
-                alert(JSON.parse(err.responseText).userMessage);
+                console.log(JSON.parse(err.responseText).userMessage);
 
             }
         });
 
 
     }
+
+
+
+
 }
 
 
@@ -1809,6 +3190,13 @@ $("#tabelaZdravil").on('click', '.zaklj', function(){
     sessionId = getSessionId();
 
     var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
 
     var naz, raz, jem, zac, kon;
 
@@ -1889,7 +3277,7 @@ $("#tabelaZdravil").on('click', '.zaklj', function(){
                                 data: JSON.stringify(podatki),
                                 success: function (res) {
                                     console.log(res.meta.href);
-                                    var html = '<tr> <td>'+naz+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+zac+' - '+new Date().toISOString().split("T")[0]+'</td></tr>'
+                                    var html = '<tr> <td>'+naz+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+zac+' - '+new Date().toISOString().split("T")[0]+'</td><td><span style="font-size: smaller; color: grey">(potrebna osvežitev strani)</span></td></tr>'
                                     $("#tabela-zdravil").append(html);
                                 },
                                 error: function (err) {

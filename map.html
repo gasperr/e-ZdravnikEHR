@@ -41,6 +41,14 @@
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
+    <style>
+        #zemljevid {
+            height: 600px;
+            margin: 0px;
+            padding: 0px
+        }
+    </style>
+
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
 
@@ -159,107 +167,82 @@
         </noscript>
 
         <div id="content" class="col-lg-10 col-sm-10">
+
+
+
+
+
+            <!-- content ends -->
+
+
+
             <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12">
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h2 style="font-size: large; font-weight: bold">Vsa pretekla zdravila</h2>
-                        </div>
-                        <div class="panel-body">
-                            <p>Seznam zdravil, ki ste jih kadarkoli jemali. Tukaj najdete tudi kako jih prenašate, zakaj ste jih jemali ter nekaj ostalih podatkov. Zdravila, ki jih trenutno jemljete so v posebnem oknu (ko prenehate z jemanjem se prenesejo podatki v to tabelo)</p>
-                            <p><b>Status v tabeli nam pove, kako delovati pred ponovnim jemanjem in se <u>generira sam na podlagi vaših vitalnih znakov v času jemanja (ali se le ti v času jemanja izboljšujejo, če so slabi, ali ne) ter vaših vitalnih znakov sedaj</u>.</b> Če ni dovolj podatkov (vsaj 3 vnosi vitalnih znakov), je privzeto stanje 'priporočen posvet'.</div>
-
-
-                        <div class="row" id="loading">
-                            <div class="col-md-4 col-lg-4 col-sm-4"></div>
-                            <div class="col-md-4 col-lg-4 col-sm-4"><img src="images/loader.gif"></div>
-                            <div class="col-md-4 col-lg-4 col-sm-4"></div>
-                        </div>
-
-                        <!-- Table -->
-                        <table class="table" id="tabela-zdravil">
-
-                        </table>
-                       <!-- <table>
-                            <tr>
-                                <td><input class="form-control" id="al_alergija" placeholder="Alergija"></td>
-                                <td><input class="form-control" id="al_simptomi" placeholder="Simptomi"></td>
-                                <td><input class="form-control" id="al_zdravila" placeholder="Zdravila"></td>
-                                <td><input class="form-control" id="al_prvic" placeholder="Prvič opažena"></td>
-                                <td><input class="form-control" id="al_trajanja" placeholder="Trajanja"></td>
-                                <td><a id="dodaj-alergijo" href="javascript:void(0)" onclick="dodajAlergijo()" class="btn btn-default"><i
-                                        class="glyphicon glyphicon-plus"></i></a></td>
-                            </tr>
-                        </table> -->
-                    </div>
-
-                </div>
-
-
-            </div>
-            <div class="row">
-                <div class="box col-md-7">
+                <div class="box col-md-10 col-lg-10 col-sm-10">
                     <div class="box-inner">
                         <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-th"></i> Trenutno jemajoča zdravila</h2>
+                            <h2><i class="glyphicon glyphicon-globe"></i> Zemljevid bližnjih zdravstvenih ustanov</h2>
 
-                            <div class="box-icon">
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                            <div class="box-icon row">
+
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+
                             </div>
                         </div>
-                        <div class="box-content" id="zz">
-                            <table class="table" id="tabelaZdravil">
-                                <tr>
-                                    <th>Naziv</th>
-                                    <th>Razlog</th>
-                                    <th>Jemanje</th>
-                                    <th>Začetek</th>
-                                    <th>Konec</th>
-                                    <th>Zaključi</th>
-                                </tr>
-
-                                <tr>
-                                    <td>Aspirin</td>
-                                    <td>Redčenje krvi</td>
-                                    <td>3/teden</td>
-                                    <td>12.12.2014</td>
-                                    <td>13.12.2015</td>
-                                    <td><a href="javascript:void(0)" class="btn btn-info zaklj"><i
-                                            class="glyphicon glyphicon-check"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Medrol</td>
-                                    <td>Chron</td>
-                                    <td>1/dan</td>
-                                    <td>12.12.2014</td>
-                                    <td>13.12.2015</td>
-                                    <td><a href="javascript:void(0)" class="btn btn-info zaklj"><i
-                                            class="glyphicon glyphicon-check"></i></a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td><input class="form-control" id="zd_naziv" placeholder="Naziv"></td>
-                                    <td><input class="form-control" id="zd_razlog" placeholder="Razlog"></td>
-                                    <td><input class="form-control" id="zd_jemanje" placeholder="Jemanja"></td>
-                                    <td><input class="form-control" id="zd_zacetek" placeholder="Začetek"></td>
-                                    <td><input class="form-control" id="zd_konec" placeholder="Konec"></td>
-                                    <td><a id="dodaj-zdravilo" href="javascript:void(0)" onclick="dodajZdravilo()" class="btn btn-default"><i
-                                            class="glyphicon glyphicon-plus"></i></a></td>
-                                </tr>
-                            </table>
-                            <span style="font-size: xx-small; color: grey" class="glyphicon glyphicon-info-sign">  Če je datum konca jemanja že mimo, se zdravilo avtomatsko pojavi v zgornji tabeli.</span><br>
-                            <span style="font-size: xx-small; color: grey" class="glyphicon glyphicon-info-sign">  Ko zaključite zdravilo se datum konca jemanja avtomatsko nastavi na današnji datum.</span>
+                        <div class="box-content box" id="zemljevid">
 
                         </div>
                     </div>
-                </div>
+                    <!--/span-->
 
+                </div>
+                <div class="box col-md-2 col-lg-2 col-sm-2">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2> Možnosti</h2>
+
+                            <div class="box-icon row">
+
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="box-content box" id="moznosti">
+                            <div class="input-group-vertical">
+
+                                <div class="well" style="margin: 0; padding: 5px">
+                                    <input type="checkbox" id="lekarne" class="check" checked>
+                                      Lekarne
+                                </div>
+
+                                <div class="well" style="margin: 0; padding: 5px">
+                                    <input type="checkbox" id="bolnice" class="check" checked>
+                                    Bolnice
+                                </div>
+
+                                <div class="well" style="margin: 0; padding: 5px">
+                                    <input type="checkbox" id="doctor" class="check" checked>
+                                    Zdr. domovi
+                                </div>
+
+                                <div class="well" style="margin: 0; padding: 5px">
+                                    <input type="checkbox" id="health" class="check" checked>
+                                    Druge zdr. ustanove
+                                </div>
+
+                                <br>
+                                Radij [m]
+                                <input class="form-control" id="radij" value="500">
+
+
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <!--/span-->
+
+                </div>
             </div>
+
+
 
 
 
@@ -337,31 +320,10 @@
 <script src="js/charisma.js"></script>
 <script src="js/index.js"></script>
 <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
-<script src="js/odpriIzvide.js"></script>
-<script src="ehr-js/ehr.js"></script>
-<script type="text/javascript">
 
-   /* $("#tabelaZdravil").on('click', '.zaklj', function(){
-        var x = $(this).parent().parent().html();
-        $(this).parent().parent().html("");
 
-        var el = $( '<div></div>' );
-        el.html(x);
-
-        var naz = $('td', el).html();
-        var raz = $('td:eq(1)', el).html();
-        var jem =  $('td:eq(2)', el).html();
-        var zac = $('td:eq(3)', el).html();
-        var kon = new Date().toISOString().split("T")[0];
-        var html = '<tr> <td>'+naz+'</td> <td>'+raz+'</td> <td>'+jem+'</td> <td>'+zac+' - '+kon+'</td> <td><span class="label label-danger">Nujen posvet</span> </td> </tr>'
-        $("#tabela-zdravil").append(html);
-    });*/
-
-    window.onload = function(){
-        nastaviZdravila();
-    }
-
-</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script src="js/map.js"></script>
 
 
 </body>
