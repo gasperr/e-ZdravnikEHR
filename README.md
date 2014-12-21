@@ -1,4 +1,6 @@
-### e-Zdravstveni Pomočnik predstavlja zdravniško kartoteko v elektronski obliki.
+Delujoča demo spletna stran: http://gasperr.github.io/ois-dn4
+
+## e-Zdravstveni Pomočnik predstavlja zdravniško kartoteko v elektronski obliki.
 
 ## Omogoča:
 
