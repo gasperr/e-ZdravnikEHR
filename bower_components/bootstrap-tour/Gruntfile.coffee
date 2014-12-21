@@ -187,7 +187,7 @@ module.exports = (grunt)->
           {
             expand: true
             flatten: true
-            src: ["docs/index.html"]
+            src: ["docs/domov.html"]
             dest: "docs/"
           }
         ]
