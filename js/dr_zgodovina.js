@@ -38,7 +38,14 @@ var svg = d3.select(".center-image").append("svg")
 d3.json("json/tree.json", function(json) {
 
     sessionId = getSessionId();
-    var ehr = localStorage.getItem('ehr_'+globalni_priimek);
+    var ehrId = localStorage.getItem('ehr_'+globalni_priimek);
+    if(globalni_priimek == "Demolis"){
+        ehrId = ehrIdDemolis;
+    }else if(globalni_priimek == "Konda"){
+        ehrId = ehrIdKonda;
+    }else if(globalni_priimek == "Nerovac"){
+        ehrId = ehrIdNerovac;
+    }
     if(ehr == null){
         alert("EHR še ne obstaja! Ponovno zgenerirajte podatke.");
     }else {
