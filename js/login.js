@@ -10,7 +10,7 @@ function vpisime(){
 
     for(var i in upimena){
         if(upimena[i] === username && gesla[i] === password){
-            window.location.href="../ois-dn4/domov.html";
+            window.location.href="domov.html";
 
             localStorage.setItem('ime_uporabnika', username);
             return true;
