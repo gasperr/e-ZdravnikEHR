@@ -1,8 +1,18 @@
-Delujoča demo spletna stran: http://gasperr.github.io/ois-dn4
+Delujoča demo spletna stran: http://gasperr.github.io/e-ZdravnikEHR/
 
 ## e-Zdravstveni Pomočnik predstavlja zdravniško kartoteko v elektronski obliki.
 
-## Omogoča:
+## Na kratko o sami zgradbi:
+
+- vključitev zunanjih podatkovnih virov - API (Twitter, zdravniška zbornica slovenije - iskanje po njihovi podatkovni bazi, Google API)
+- povezava z nastajajočo platformo EHRScape (https://www.ehrscape.com/); operiranje z EHRScape podatkovno bazo (vsi podatki temeljijo na tej PB), AQL poizvedbe..
+-  spletna aplikacija v celoti deluje na strani odjemalca s pomočjo API klicev pa pridobiva podatke iz zunanjih virov
+-  aplikacija temelji na Bootstrapu, deluje na vseh napravah enako (mobitel, tablica, ..)
+-  za vizualizacijo grafov uporaba D3js knjižnice
+-  ...
+
+
+## Aplikacija omogoča:
 
 - vnos novih vitalnih znakov ter opozori, če so vitalni znaki slabi; ponudi tudi najbližjo zdravniško pomoč
 
@@ -26,3 +36,6 @@ Delujoča demo spletna stran: http://gasperr.github.io/ois-dn4
 
 
 ....ter še mnogo več......
+
+
+
