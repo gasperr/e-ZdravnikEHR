@@ -8,9 +8,9 @@ var username = "ois.seminar";
 var password = "ois4fri";
 
 
-var ehrIdDemolis = "9248f7a9-f7d1-4277-b713-0f61df9db609";
-var ehrIdKonda = "eb44f71b-f046-4e39-99d9-188306d2483d";
-var ehrIdNerovac = "897c5cd6-968b-4a85-b3ed-28e49f3dd8e1";
+var ehrIdDemolis = "123eefb1-847d-4c34-9cc2-9f6cb3a0c30b";
+var ehrIdKonda = "67dad48d-42ca-4d61-9ab6-bbad1b990168";
+var ehrIdNerovac = "cc62a1a5-14fc-44e7-9837-e9199e248cf6";
 
 function getSessionId() {
     var response = $.ajax({
@@ -66,7 +66,7 @@ switch(globalno_ime){
         poteceDne = "15.10.2018";
 
         nezakljSpecPregledi = [ {specialist: 'Kardiolog', ustanova: 'SB Celje', nasljPregled: '21.12.2015'},
-                                 {specialist: 'Nevrolog', ustanova: 'UKC LJ', nasljPregled: '21.12.2014'}];
+                                 {specialist: 'Nevrolog', ustanova: 'UKC LJ', nasljPregled: '05.02.2015'}];
         zdEkipa = [{naziv: 'dr.med. Majda Potrč Žeru', institucija: 'Zdravstveni dom Velenje', vrsta: 'Osebni'},
             {naziv: 'dr.med. Matjaž Vrhovac', institucija: 'Splošnja Bolnišnice Celje', vrsta: 'Kardiolog'},
             {naziv: 'dr.med. Gašper Pogrinjec', institucija: 'Urgentni Klinični Center LJ', vrsta: 'Nevrolog'}];
@@ -99,7 +99,7 @@ switch(globalno_ime){
         tipZavarovanja = "Nezgodno";
         poteceDne = "1.8.2022";
 
-        nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'ZD Ljubljana', nasljPregled: '29.12.2014'},
+        nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'ZD Ljubljana', nasljPregled: '04.02.2015'},
                                  {specialist: 'Hematolog', ustanova: 'UKC Ljubljana', nasljPregled: '20.01.2015'}];
 
         zdEkipa = [{naziv: 'dr.med. Klemen Zdržu Lom', institucija: 'Zdravstveni dom Ljubljana, Aškerčeva', vrsta: 'Osebni'},
@@ -135,7 +135,7 @@ switch(globalno_ime){
         poteceDne = "5.11.2028";
 
         nezakljSpecPregledi = [{specialist: 'Dermatolog', ustanova: 'SB Celje', nasljPregled: '10.5.2015'},
-            {specialist: 'Onkolog', ustanova: 'UKC LJ', nasljPregled: '29.12.2014'},
+            {specialist: 'Onkolog', ustanova: 'UKC LJ', nasljPregled: '03.02.2014'},
             {specialist: 'Kirurgija roke', ustanova: 'SB Celje', nasljPregled: '15.01.2015'}];
 
         zdEkipa = [{naziv: 'dr.med. Urška Jeromal Bulc', institucija: 'Zdravstveni dom Ljubljana, Rožna, Aškarčeva', vrsta: 'Osebni'},
