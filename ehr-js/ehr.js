@@ -8,7 +8,7 @@ var username = "ois.seminar";
 var password = "ois4fri";
 
 
-var ehrIdDemolis = "123eefb1-847d-4c34-9cc2-9f6cb3a0c30b";
+var ehrIdDemolis = "a74c3564-a6ee-4796-a5de-914d7fe9332e";
 var ehrIdKonda = "67dad48d-42ca-4d61-9ab6-bbad1b990168";
 var ehrIdNerovac = "cc62a1a5-14fc-44e7-9837-e9199e248cf6";
 
