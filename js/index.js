@@ -160,10 +160,11 @@ function generirajDogodke(){
 
                                 d = new Date();
                                 cez3Dni = new Date(d.setDate(d.getDate() + 3));
+                                pred3Dni = new Date(d.setDate(d.getDate() - 3));
                                 var dates = [];
                                 dates = nezak[2].split(".");
 
-                                if(new Date(dates[2], dates[1]-1, dates[0]) < cez3Dni) {
+                                if(new Date(dates[2], dates[1]-1, dates[0]) < cez3Dni && new Date(dates[2], dates[1]-1, dates[0]) > cez3Dni) {
                                     var x = '<tr> <td><span class="glyphicon glyphicon-eye-open blue"></span> Bliža se vaš <a href="pregled_podatkov.html">pregled pri '+specialist+'-u</a>. Ne pozabite izvidov!</td> <td>' + now.toISOString().split("T")[0] + '</td> <td><a href="javascript:void(0)" class="glyphicon glyphicon-remove small remove-opomnik" id=""></a></td> </tr>';
                                     $("#tbh").after(x);
 
